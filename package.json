@@ -3,11 +3,34 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint --dir .",
+    "analyze": "ANALYZE=true yarn dev"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "next": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@next/bundle-analyzer": "^13.4.9",
+    "@types/node": "20.4.1",
+    "@types/react": "18.2.14",
+    "@typescript-eslint/eslint-plugin": "^5.38.1",
+    "@typescript-eslint/parser": "^5.38.1",
+    "eslint": "^8.44.0",
+    "eslint-config-next": "^13.0.7",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.5.3",
+    "eslint-plugin-jest-dom": "^4.0.2",
+    "eslint-plugin-no-relative-import-paths": "^1.4.0",
+    "eslint-plugin-prettier": "^5.0.0-alpha.2",
+    "eslint-plugin-storybook": "^0.6.12",
+    "eslint-plugin-testing-library": "^5.5.1",
+    "prettier": "^3.0.0",
+    "typescript": "5.1.6"
   }
 }

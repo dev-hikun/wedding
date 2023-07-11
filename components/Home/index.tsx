@@ -1,0 +1,4 @@
+const Home = () => {
+  return <>initial 가나다라마바사 아자차카타파하</>;
+};
+export default Home;

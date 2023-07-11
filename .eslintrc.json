@@ -1,0 +1,149 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "next",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "plugin:testing-library/react"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "storybook", "import", "testing-library", "no-relative-import-paths"],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-explicit-any": "error",
+    "react/boolean-prop-naming": [
+      "error",
+      {
+        "propTypeNames": ["bool", "mutuallyExclusiveTrueProps"],
+        "rule": "^[$]?(is|has|show)[A-Z]([A-Za-z0-9]?)+"
+      }
+    ],
+    "react/forbid-component-props": ["error", { "forbid": ["style"] }],
+    "react/hook-use-state": "error",
+    "react/jsx-handler-names": [
+      "error",
+      {
+        "eventHandlerPrefix": "handle|on",
+        "eventHandlerPropPrefix": "on",
+        "checkLocalVariables": true
+      }
+    ],
+    "react/sort-prop-types": [
+      "error",
+      {
+        "ignoreCase": true,
+        "callbacksLast": true,
+        "sortShapeProp": true
+      }
+    ],
+    "react/jsx-sort-props": [
+      "error",
+      {
+        "ignoreCase": true,
+        "callbacksLast": true,
+        "shorthandFirst": true,
+        "multiline": "last",
+        "reservedFirst": true,
+        "noSortAlphabetically": true
+      }
+    ],
+    "react/jsx-tag-spacing": ["error", { "beforeSelfClosing": "always" }],
+    "react/react-in-jsx-scope": "off",
+    "react/function-component-definition": [
+      "error",
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "react-hooks/exhaustive-deps": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react/destructuring-assignment": [
+      "error",
+      "always",
+      { "ignoreClassFields": true, "destructureInSignature": "always" }
+    ],
+    "import/default": "error",
+    "import/namespace": "error",
+    "import/no-unused-modules": [
+      "off",
+      {
+        "unusedExports": true,
+        "ignoreExports": ["./pages/**/*.tsx", "./hooks/query/*.ts"]
+      }
+    ],
+    "import/no-commonjs": "error",
+    "import/no-nodejs-modules": "error",
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal", "sibling"],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "**/*.@(svg|jpg|jpeg|png|gif|css|scss)",
+            "group": "internal",
+            "position": "after"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react"],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    "storybook/prefer-pascal-case": "off",
+    "testing-library/await-fire-event": "error",
+    "testing-library/no-await-sync-events": "error",
+    "testing-library/no-global-regexp-flag-in-query": "error",
+    "testing-library/no-manual-cleanup": "error",
+    "testing-library/no-render-in-setup": ["error", { "allowTestingFrameworkSetupHook": "beforeEach" }],
+    "testing-library/prefer-user-event": "error",
+    "testing-library/prefer-wait-for": "error",
+    "no-relative-import-paths/no-relative-import-paths": "error",
+    "no-console": "error",
+    "quotes": ["error", "single", { "avoidEscape": true }],
+    "object-curly-spacing": ["error", "always"],
+    "object-curly-newline": ["error", { "consistent": true }],
+    "max-depth": ["error", 4],
+    "dot-notation": ["error"],
+    "no-implicit-coercion": ["error", { "allow": ["!!"] }],
+    "no-lone-blocks": "error",
+    "no-param-reassign": "error",
+    "eol-last": "error",
+    "eqeqeq": "error",
+    "no-nested-ternary": "error",
+    "no-else-return": "error",
+    "no-unused-vars": "off",
+    "yoda": ["error", "never", { "exceptRange": true }]
+  },
+  "overrides": [
+    {
+      "files": ["**/*.stories.*"],
+      "rules": {
+        "import/no-anonymous-default-export": "off",
+        "import/no-unused-modules": "off",
+        "react/jsx-props-no-spreading": "off"
+      }
+    },
+    {
+      "files": ["**/*.js"],
+      "rules": {
+        "import/no-commonjs": "off",
+        "import/no-nodejs-modules": "off",
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    }
+  ]
+}
