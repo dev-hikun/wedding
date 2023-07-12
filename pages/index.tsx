@@ -2,8 +2,8 @@ import type { GetServerSideProps } from 'next';
 import Head from 'next/head';
 
 import Home from 'components/Home';
-import Layout from 'components/Layout';
-import { NextPageWithLayout } from 'types/common';
+import Layout from 'components/Layout/Default';
+import type { NextPageWithLayout } from 'types/common';
 
 const MainPage: NextPageWithLayout = () => (
   <>

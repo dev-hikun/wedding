@@ -3,8 +3,9 @@ import { CacheProvider, ThemeProvider } from '@emotion/react';
 import type { AppProps as NextAppProps } from 'next/app';
 
 import GlobalStyles from 'assets/styles/GlobalStyles';
-import DefaultLayout from 'components/Layout';
-import { Locale, NextPageWithLayout } from 'types/common';
+import getTheme from 'assets/styles/theme';
+import DefaultLayout from 'components/Layout/Default';
+import type { Locale, NextPageWithLayout } from 'types/common';
 
 const cache = createCache({ key: 'next' });
 
@@ -13,14 +14,11 @@ interface AppProps extends NextAppProps<Locale> {
 }
 const App = ({ Component, pageProps }: AppProps) => {
   const Layout = Component.Layout || DefaultLayout;
+  const theme = getTheme({ locale: pageProps.locale });
 
   return (
     <CacheProvider value={cache}>
-      <ThemeProvider
-        theme={{
-          locale: pageProps.locale,
-        }}
-      >
+      <ThemeProvider theme={theme}>
         <GlobalStyles />
         <Layout locale={pageProps.locale}>
           <Component {...pageProps} />

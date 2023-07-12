@@ -6,5 +6,8 @@ declare module '@emotion/react' {
     color: {
       text: string;
     };
+    zIndex: {
+      header: number;
+    };
   }
 }

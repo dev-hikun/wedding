@@ -9,7 +9,7 @@ const ko = Noto_Serif_KR({
   weight: ['400', '500', '700'],
   variable: '--noto-serif-ko',
   style: 'normal',
-  display: 'fallback',
+  display: 'swap',
   subsets: ['latin'],
   fallback: [
     '-apple-system',
@@ -27,7 +27,7 @@ const ja = Noto_Serif_JP({
   weight: ['400', '500', '700'],
   variable: '--noto-serif-ja',
   style: 'normal',
-  display: 'fallback',
+  display: 'swap',
   subsets: ['latin'],
   fallback: [
     '-apple-system',

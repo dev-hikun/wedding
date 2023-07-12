@@ -1,9 +1,10 @@
 import { variable } from 'assets/fonts';
-import { FCLayout } from 'types/common';
+import AppHeader from 'components/AppHeader';
+import type { FCLayout } from 'types/common';
 
 const Layout: FCLayout = ({ children, locale }) => (
   <div className={[variable[locale]].join(' ')}>
-    <header>여긴헤더</header>
+    <AppHeader />
     <main>{children}</main>
   </div>
 );
