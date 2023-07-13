@@ -1,13 +1,7 @@
+import { Theme as ThemeType } from 'assets/styles/theme';
 import '@emotion/react';
-import { Locale } from 'types/common';
 
 declare module '@emotion/react' {
-  export interface Theme extends Locale {
-    color: {
-      text: string;
-    };
-    zIndex: {
-      header: number;
-    };
-  }
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  export interface Theme extends ThemeType {}
 }

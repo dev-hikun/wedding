@@ -6,12 +6,12 @@ const Header = styled.header({
   width: '100%',
   padding: 16,
   opacity: 0,
-  top: -42,
+  top: -56,
   background: '#ffffff',
   transitionProperty: 'top, opacity',
   transitionDuration: '.3s',
   msTransitionTimingFunction: 'ease-in-out',
-  '&.is-sticky': {
+  '&.open': {
     opacity: 1,
     top: 0,
     background: '#ffffffCC',

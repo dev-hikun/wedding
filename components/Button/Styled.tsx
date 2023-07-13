@@ -16,10 +16,15 @@ const Button = styled.button({
 const IconWrapper = styled('span', {
   shouldForwardProp: (propName) => propName !== 'size',
 })<{ size: keyof IconButtonSizeType }>(({ size }) => ({
+  display: 'flex',
+  lineHeight: `${IconButtonSize[size]}px`,
   fontSize: IconButtonSize[size],
   svg: {
     width: IconButtonSize[size],
     height: IconButtonSize[size],
+  },
+  '&:not(:disabled)': {
+    cursor: 'pointer',
   },
 }));
 
