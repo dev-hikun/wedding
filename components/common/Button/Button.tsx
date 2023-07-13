@@ -1,6 +1,6 @@
 import type { ComponentProps } from 'react';
 
-import Styled from 'components/Button/Styled';
+import Styled from 'components/common/Button/Styled';
 import type { FCChildren } from 'types/common';
 import { clsx } from 'utils/common';
 

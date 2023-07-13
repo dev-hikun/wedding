@@ -10,15 +10,15 @@ const GlobalStyles = () => (
       }
 
       html,
-      body {
+      body,
+      #__next {
         margin: 0;
         font-size: 14px;
         font-family: ${FONT_CSS_VAR[locale]};
         line-height: 1.5;
+        height: 100%;
       }
 
-      html,
-      body,
       section,
       a,
       h1,
@@ -30,6 +30,10 @@ const GlobalStyles = () => (
       p,
       span {
         font-family: ${FONT_CSS_VAR[locale]};
+      }
+
+      body.loading {
+        overflow: hidden;
       }
 
       a {

@@ -1,7 +1,7 @@
 import { forwardRef, type ElementType, type ForwardedRef } from 'react';
 
-import Styled from 'components/Typography/Styled';
-import { defaultVariantMapping, type TypographyRootProps } from 'components/Typography/type';
+import Styled from 'components/common/Typography/Styled';
+import { defaultVariantMapping, type TypographyRootProps } from 'components/common/Typography/type';
 import type { FCChildren } from 'types/common';
 import { clsx } from 'utils/common';
 

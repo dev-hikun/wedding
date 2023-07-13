@@ -3,8 +3,8 @@ import { memo, type Dispatch, type SetStateAction, useRef, type FC } from 'react
 import type { AnimationItem } from 'lottie-web';
 
 import animationData from 'assets/json/menuLottie.json';
-import IconButton from 'components/Button/IconButton';
-import Lottie from 'components/Lottie';
+import IconButton from 'components/common/Button/IconButton';
+import Lottie from 'components/common/Lottie';
 
 interface MenuProps {
   isOpen?: boolean;

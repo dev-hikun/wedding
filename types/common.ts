@@ -9,4 +9,4 @@ export type NextPageWithLayout<P extends Locale = Locale, IP = P> = NextPage<P, 
 };
 
 export type FCChildren<Props = object> = FC<PropsWithChildren<Props>>;
-export type FCLayout<Props = { [key: string]: never }> = FC<PropsWithChildren<Locale & Props>>;
+export type FCLayout<Props = object> = FC<PropsWithChildren<Props>>;

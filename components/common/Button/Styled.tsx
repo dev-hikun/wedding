@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import { IconButtonSize, type IconButtonSizeType } from 'components/Button/type';
+import { IconButtonSize, type IconButtonSizeType } from 'components/common/Button/type';
 
 const Button = styled.button({
   background: 'none',
