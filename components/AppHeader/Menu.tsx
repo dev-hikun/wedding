@@ -1,5 +1,6 @@
 import { memo, type Dispatch, type SetStateAction, useRef, type FC } from 'react';
 
+import styled from '@emotion/styled';
 import type { AnimationItem } from 'lottie-web';
 
 import animationData from 'assets/json/menuLottie.json';
@@ -19,23 +20,16 @@ const Menu: FC<MenuProps> = ({ setIsOpen }) => {
     anim.current = item;
   };
 
+  const handleButtonClick = () => {
+    setIsOpen((open) => {
+      anim.current.setDirection(open ? -1 : 1);
+      anim.current.play();
+      return !open;
+    });
+  };
+
   return (
-    <IconButton
-      size="md"
-      css={{
-        position: 'fixed',
-        top: 16,
-        right: 16,
-        zIndex: 1000,
-      }}
-      onClick={() => {
-        setIsOpen((open) => {
-          anim.current.setDirection(open ? -1 : 1);
-          anim.current.play();
-          return !open;
-        });
-      }}
-    >
+    <Styled.Button size="md" onClick={handleButtonClick}>
       <Lottie
         animationData={animationData}
         width={24}
@@ -46,7 +40,21 @@ const Menu: FC<MenuProps> = ({ setIsOpen }) => {
         }}
         onAnimationComplete={handleAnimationComplete}
       />
-    </IconButton>
+    </Styled.Button>
   );
 };
 export default memo(Menu);
+
+const Styled = {
+  Button: styled(IconButton)(({ theme }) => ({
+    position: 'fixed',
+    top: 16,
+    right: 16,
+    zIndex: theme.zIndex.header + 1,
+    backgroundColor: theme.color.white040,
+    borderRadius: 4,
+    '&&&': {
+      padding: theme.spacing[4],
+    },
+  })),
+};

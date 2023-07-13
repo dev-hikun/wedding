@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-const Header = styled.header({
+const Header = styled.header(({ theme }) => ({
   position: 'fixed',
   display: 'flex',
   width: '100%',
@@ -10,13 +10,14 @@ const Header = styled.header({
   background: '#ffffff',
   transitionProperty: 'top, opacity',
   transitionDuration: '.3s',
+  zIndex: theme.zIndex.header,
   msTransitionTimingFunction: 'ease-in-out',
   '&.open': {
     opacity: 1,
     top: 0,
     background: '#ffffffCC',
   },
-});
+}));
 
 const Styled = {
   Header,

@@ -19,11 +19,11 @@ const PageLoading: FCChildren = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    document && document.body.classList.add('loading');
+    isLoading && document && document.body.classList.add('loading');
     return () => {
-      document && document.body.classList.remove('loading');
+      !isLoading && document && document.body.classList.remove('loading');
     };
-  }, []);
+  }, [isLoading]);
 
   return (
     <LoadingContext.Provider value={{ setIsLoading }}>
