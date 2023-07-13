@@ -4,7 +4,8 @@ import type { Locale } from 'types/common';
 const theme = {
   color: {
     white010: '#ffffff10',
-    white040: '#ffffff40',
+    white070: '#ffffffB3',
+    white040: '#ffffff66',
     text: '#333',
   },
   zIndex: {

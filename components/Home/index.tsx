@@ -1,10 +1,11 @@
+import IntroPanel from 'components/Home/IntroPanel';
 import Styled from 'components/Home/Styled';
 import Panel from 'components/Panel';
 
 const Home = () => {
   return (
     <Styled.Container>
-      <Panel></Panel>
+      <IntroPanel />
       <Panel>두번째 패널</Panel>
     </Styled.Container>
   );
