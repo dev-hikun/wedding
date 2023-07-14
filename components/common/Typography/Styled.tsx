@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 import { FONT_CSS_VAR } from 'assets/fonts/notoSerif';
-import type { TypographyRootProps } from 'components/Typography/type';
+import type { TypographyRootProps } from 'components/common/Typography/type';
 
 const Typography = styled.span<TypographyRootProps>(({ theme, align, noWrap }) => ({
   color: theme.color.text,
