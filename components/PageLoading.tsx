@@ -50,12 +50,13 @@ const Styled = {
     alignItems: 'center',
     justifyContent: 'center',
     inset: 0,
-    background: theme.color.white040,
+    background: theme.color.black040,
   })),
   Text: styled.span(hiddenText),
   LottieWrapper: styled.div(({ theme }) => ({
-    width: '33.333vw',
+    width: '200px',
     textAlign: 'center',
+    color: theme.color.white,
     svg: {
       marginBottom: theme.spacing[4],
     },

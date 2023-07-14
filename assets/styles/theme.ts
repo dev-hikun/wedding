@@ -6,6 +6,7 @@ const theme = {
     white010: '#ffffff10',
     white070: '#ffffffB3',
     white040: '#ffffff66',
+    black040: '#00000066',
     white: '#ffffff',
     text: '#333',
     gray: '#999',
