@@ -16,7 +16,10 @@ export default Layout;
 const Styled = {
   Container: styled.div(HideScrollbarStyle, {
     [mediaBreakUps.md]: {
-      maxWidth: `max(${9 / 0.195}vh, 360px)`,
+      '--w': `${9 / 0.195}vh`,
+      maxWidth: 'calc(var(--w), 360px)',
+      width: 'var(--w)',
+      minWidth: 360,
       position: 'relative',
       margin: '0 auto',
     },

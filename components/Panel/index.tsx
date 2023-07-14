@@ -8,10 +8,21 @@ import paperImg from 'assets/images/paper-background.png';
 interface Panel extends ComponentPropsWithoutRef<'div'> {
   paper?: boolean;
 }
-const Panel: FCChildren<Panel> = ({ children, paper = false, ...props }) => (
+const Panel: FCChildren<Panel> = ({ children, className, paper = false, ...props }) => (
   <Styled.Panel {...props}>
-    {paper && <Styled.Background fill src={paperImg} alt="" sizes="30vw" />}
-    {children}
+    {paper && (
+      <Styled.Background
+        fill
+        src={paperImg}
+        alt=""
+        sizes="30vw"
+        placeholder="blur"
+        blurDataURL={paperImg.blurDataURL}
+      />
+    )}
+    <div css={{ position: 'relative', zIndex: 1, height: '100%' }} className={className}>
+      {children}
+    </div>
   </Styled.Panel>
 );
 export default Panel;

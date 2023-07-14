@@ -3,18 +3,19 @@
   "scripts": {
     "dev:withFont": "NODE_TLS_REJECT_UNAUTHORIZED=0 yarn dev",
     "dev": "next dev",
-    "build": "next build",
     "start": "next start",
     "lint": "next lint --dir .",
     "analyze": "ANALYZE=true yarn dev"
   },
+  "homepage": "https://dev-hikun.github.io/wedding",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "lottie-web": "^5.12.2",
     "next": "latest",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "sharp": "^0.32.3"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^13.4.9",

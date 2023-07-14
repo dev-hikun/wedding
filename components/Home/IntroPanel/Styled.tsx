@@ -1,12 +1,26 @@
 import styled from '@emotion/styled';
 
+import PanelComponent from 'components/Panel';
+
+const Panel = styled(PanelComponent)({
+  display: 'flex',
+  flexDirection: 'column',
+});
+
 const ImageWrapper = styled.div({
-  height: 'calc(var(--vh, 1vh) * 100 - 264px)',
+  width: '100%',
+  height: 'auto',
   backgroundColor: 'black',
   position: 'relative',
   zIndex: 0,
+  flexGrow: 0,
   img: {
     objectFit: 'cover',
+  },
+  '&::after': {
+    display: 'block',
+    content: '""',
+    paddingBottom: `${580 / 3.9}%`,
   },
 });
 
@@ -24,7 +38,8 @@ const NoticeContainer = styled.div(({ theme }) => ({
 const BottomContainer = styled.section({
   display: 'flex',
   padding: '44px 32px',
-  gap: 48,
+  flex: '0 1 100%',
+  justifyContent: 'space-between',
   flexDirection: 'column',
   alignSelf: 'stretch',
 });
@@ -45,11 +60,12 @@ const LineBox = styled.div({
   inset: 0,
   border: '1px solid #c5c5c5',
   width: 'max(calc(100% - 32px), 328px)',
-  height: 'calc(var(--vh, 1vh) * 100 - 32px)',
+  height: 'calc(100% - 32px)',
   background: 'transparent',
 });
 
 const Styled = {
+  Panel,
   ImageWrapper,
   NoticeContainer,
   NameContainer,

@@ -2,15 +2,22 @@ import Image from 'next/image';
 
 import Typography from 'components/common/Typography';
 import Styled from 'components/Home/IntroPanel/Styled';
-import Panel from 'components/Panel';
 
 import introPhoto from 'assets/images/main-photo.png';
 
 const IntroPanel = () => {
   return (
-    <Panel>
+    <Styled.Panel>
       <Styled.ImageWrapper>
-        <Image fill priority objectFit="cover" sizes="100%" src={introPhoto} alt="희현x스즈" />
+        <Image
+          fill
+          css={{ objectFit: 'cover' }}
+          sizes="100%"
+          src={introPhoto}
+          alt="희현x스즈"
+          placeholder="blur"
+          blurDataURL={introPhoto.blurDataURL}
+        />
         <Styled.NoticeContainer>
           <Typography align="center" variant="introWe">
             우리,
@@ -37,7 +44,7 @@ const IntroPanel = () => {
         </div>
       </Styled.BottomContainer>
       <Styled.LineBox />
-    </Panel>
+    </Styled.Panel>
   );
 };
 export default IntroPanel;

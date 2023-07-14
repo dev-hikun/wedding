@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 
+import { mediaBreakUps } from 'assets/styles/breakpoints';
+
 const Header = styled.header(({ theme }) => ({
   position: 'fixed',
   display: 'flex',
@@ -16,6 +18,9 @@ const Header = styled.header(({ theme }) => ({
     opacity: 1,
     top: 0,
     background: '#ffffffCC',
+  },
+  [mediaBreakUps.md]: {
+    width: 'inherit',
   },
 }));
 

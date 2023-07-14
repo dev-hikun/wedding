@@ -28,6 +28,16 @@ const TypographyStyle: Partial<Record<TypographyVariantType, CSSInterpolation>> 
     fontSize: 14,
     fontWeight: '500',
   },
+  body3: {
+    fontSize: 16,
+    fontWeight: '400',
+    lineHeight: 2.5,
+  },
+  body4: {
+    fotnSize: 18,
+    fontWeight: '400',
+    lineHeight: '40px',
+  },
 } as const;
 
 export default TypographyStyle;
