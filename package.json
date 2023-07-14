@@ -6,8 +6,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint --dir .",
-    "analyze": "ANALYZE=true yarn dev",
-    "deploy": "yarn build && yarn add -f .next/ && git commit -m 'deploy to netlify' && git push origin master:relase"
+    "analyze": "ANALYZE=true yarn dev"
   },
   "homepage": "https://dev-hikun.github.io/wedding",
   "dependencies": {
