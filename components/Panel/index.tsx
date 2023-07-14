@@ -20,7 +20,7 @@ const Panel: FCChildren<Panel> = ({ children, className, paper = false, ...props
         blurDataURL={paperImg.blurDataURL}
       />
     )}
-    <div css={{ position: 'relative', zIndex: 1, height: '100%' }} className={className}>
+    <div css={{ position: 'relative', zIndex: 1, minHeight: 'inherit' }} className={className}>
       {children}
     </div>
   </Styled.Panel>

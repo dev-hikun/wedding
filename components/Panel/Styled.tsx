@@ -3,9 +3,7 @@ import Image from 'next/image';
 
 const Panel = styled.section(({ theme }) => ({
   width: '100%',
-  height: 'calc(var(--vh, 1) * 100)',
-  maxHeight: '100%',
-  minHeight: 640,
+  minHeight: 'max(calc(var(--vh, 1) * 100), 640px)',
   position: 'relative',
   backgroundColor: theme.color.white,
   img: {

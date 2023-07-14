@@ -13,7 +13,7 @@ const ImageWrapper = styled.div({
   backgroundColor: 'black',
   position: 'relative',
   zIndex: 0,
-  flexGrow: 0,
+  flex: '1 0 100%',
   img: {
     objectFit: 'cover',
   },
@@ -38,7 +38,7 @@ const NoticeContainer = styled.div(({ theme }) => ({
 const BottomContainer = styled.section({
   display: 'flex',
   padding: '44px 32px',
-  flex: '0 1 100%',
+  flex: '1 0 100%',
   justifyContent: 'space-between',
   flexDirection: 'column',
   alignSelf: 'stretch',
