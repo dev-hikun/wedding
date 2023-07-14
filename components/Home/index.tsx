@@ -7,6 +7,7 @@ const Home = () => {
     <Styled.Container>
       <IntroPanel />
       <Panel>두번째 패널</Panel>
+      <Panel>세번째 패널</Panel>
     </Styled.Container>
   );
 };

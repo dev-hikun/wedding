@@ -1,24 +1,52 @@
 import { forwardRef, type ElementType, type ForwardedRef } from 'react';
 
+import { css } from '@emotion/react';
+import type { CSSInterpolation } from '@emotion/serialize';
+
 import Styled from 'components/common/Typography/Styled';
 import { defaultVariantMapping, type TypographyRootProps } from 'components/common/Typography/type';
+import TypographyStyle from 'constants/foundation/typography';
 import type { FCChildren } from 'types/common';
 import { clsx } from 'utils/common';
 
-interface TypographyProps extends TypographyRootProps {
+type Parent = TypographyRootProps & { css?: CSSInterpolation };
+interface TypographyProps extends Parent {
   paragraph?: boolean;
   as?: ElementType;
   className?: string;
 }
 const Typography: FCChildren<TypographyProps> = forwardRef(
   (
-    { as, paragraph, className, children, variant = 'body1', align = 'inherit', noWrap = false, ...props },
+    {
+      as,
+      paragraph,
+      className,
+      css: propCss,
+      children,
+      color = 'text',
+      variant = 'body1',
+      align = 'inherit',
+      noWrap = false,
+      ...props
+    },
     forwardedRef: ForwardedRef<HTMLElement>
   ) => {
     const classes = clsx([className]);
     const Component = as || (paragraph ? 'p' : defaultVariantMapping[variant]) || 'span';
     return (
-      <Styled.Typography ref={forwardedRef} noWrap={noWrap} align={align} as={Component} className={classes} {...props}>
+      <Styled.Typography
+        ref={forwardedRef}
+        noWrap={noWrap}
+        align={align}
+        color={color}
+        as={Component}
+        className={classes}
+        css={css`
+          ${TypographyStyle[variant]};
+          ${propCss};
+        `}
+        {...props}
+      >
         {children}
       </Styled.Typography>
     );

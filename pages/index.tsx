@@ -9,7 +9,7 @@ const MainPage: NextPageWithLayout = () => (
   <>
     <Head>
       <title key="title">이희현 & 미스즈 결혼합니다.</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      <meta name="viewport" content="initial-scale=1, height=device-height, width=device-width, shrink-to-fit=no" />
     </Head>
     <Home />
   </>

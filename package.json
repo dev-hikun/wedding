@@ -1,6 +1,7 @@
 {
   "private": true,
   "scripts": {
+    "dev:withFont": "NODE_TLS_REJECT_UNAUTHORIZED=0 yarn dev",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

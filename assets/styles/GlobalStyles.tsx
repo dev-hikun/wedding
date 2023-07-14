@@ -4,7 +4,7 @@ import { FONT_CSS_VAR } from 'assets/fonts/notoSerif';
 
 const GlobalStyles = () => (
   <Global
-    styles={({ locale }) => css`
+    styles={({ locale, color }) => css`
       * {
         box-sizing: border-box;
       }
@@ -17,6 +17,9 @@ const GlobalStyles = () => (
         font-family: ${FONT_CSS_VAR[locale]};
         line-height: 1.5;
         height: 100%;
+        min-height: 640px;
+        min-width: 360px;
+        background-color: ${color.gray100};
       }
 
       section,

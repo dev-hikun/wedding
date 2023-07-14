@@ -6,7 +6,10 @@ const theme = {
     white010: '#ffffff10',
     white070: '#ffffffB3',
     white040: '#ffffff66',
+    white: '#ffffff',
     text: '#333',
+    gray: '#999',
+    gray100: '#e2e2e2',
   },
   zIndex: {
     loading: 5000,

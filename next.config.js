@@ -7,9 +7,6 @@ module.exports = () => {
   const nextConfig = {
     reactStrictMode: true,
     swcMinify: true,
-    images: {
-      remotePatterns: [{ protocol: 'https', hostname: 'placehold.it' }],
-    },
     compiler: {
       emotion: true,
     },

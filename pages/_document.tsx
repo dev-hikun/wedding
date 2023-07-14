@@ -1,4 +1,4 @@
-import { Html, Main, Head, NextScript, type DocumentProps } from 'next/document';
+import { Html, Main, NextScript, type DocumentProps, Head } from 'next/document';
 
 import { variable } from 'assets/fonts';
 
