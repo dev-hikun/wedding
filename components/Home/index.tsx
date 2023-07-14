@@ -11,7 +11,7 @@ const Home = () => {
   useEffect(() => {
     if (window) {
       toggle(true);
-      setTimeout(() => toggle(false), 3000);
+      setTimeout(() => toggle(false), 1500);
     }
   }, [toggle]);
   return (
