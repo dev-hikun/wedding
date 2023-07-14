@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { createContext, useEffect, useState, type Dispatch, type SetStateAction } from 'react';
+import { createContext, useState, type Dispatch, type SetStateAction } from 'react';
 
 import styled from '@emotion/styled';
 
@@ -18,13 +18,6 @@ export const LoadingContext = createContext<{
 const PageLoading: FCChildren = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    isLoading && document && document.body.classList.add('loading');
-    return () => {
-      !isLoading && document && document.body.classList.remove('loading');
-    };
-  }, [isLoading]);
-
   return (
     <LoadingContext.Provider value={{ setIsLoading }}>
       {children}
@@ -41,7 +34,6 @@ const PageLoading: FCChildren = ({ children }) => {
   );
 };
 export default PageLoading;
-
 const Styled = {
   Loading: styled.div(({ theme }) => ({
     zIndex: theme.zIndex.loading,
@@ -49,7 +41,13 @@ const Styled = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    inset: 0,
+    alignSelf: 'stretch',
+    width: '100%',
+    height: 'max(calc(var(--vh, 1) * 100), 360px)',
+    left: 0,
+    top: 0,
+    right: 0,
+    bottom: 0,
     background: theme.color.black040,
   })),
   Text: styled.span(hiddenText),
