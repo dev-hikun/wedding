@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 
+import HallInformation from 'components/Home/HallInformationPanel';
 import IntroPanel from 'components/Home/IntroPanel';
 import MessagePanel from 'components/Home/MessagePanel';
 import Styled from 'components/Home/Styled';
-import Panel from 'components/Panel';
 import usePageLoading from 'hooks/usePageLoading';
 
 const Home = () => {
@@ -19,7 +19,7 @@ const Home = () => {
     <Styled.Container>
       <IntroPanel />
       <MessagePanel />
-      <Panel>세번째 패널</Panel>
+      <HallInformation />
     </Styled.Container>
   );
 };

@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import styled from '@emotion/styled';
 
@@ -15,16 +15,26 @@ const PageLoading: FCChildren = ({ children }) => {
   return (
     <>
       <LoadingContext.Provider setIsLoading={setIsLoading}>{children}</LoadingContext.Provider>
-      {isLoading && document && (
-        <Styled.Loading>
-          <Styled.LottieWrapper>
-            <Lottie animationData={animationData} width="100%" height="100%" />
-            Loading...
-          </Styled.LottieWrapper>
-          <Styled.Text>페이지 로딩중입니다.</Styled.Text>
-        </Styled.Loading>
-      )}
+      {isLoading && document && <Loading />}
     </>
+  );
+};
+
+const Loading = () => {
+  useEffect(() => {
+    document.documentElement.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, []);
+  return (
+    <Styled.Loading>
+      <Styled.LottieWrapper>
+        <Lottie animationData={animationData} width="100%" height="100%" />
+        Loading...
+      </Styled.LottieWrapper>
+      <Styled.Text>페이지 로딩중입니다.</Styled.Text>
+    </Styled.Loading>
   );
 };
 
@@ -32,13 +42,13 @@ export default PageLoading;
 const Styled = {
   Loading: styled.div(({ theme }) => ({
     zIndex: theme.zIndex.loading,
-    position: 'absolute',
+    position: 'fixed',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     alignSelf: 'stretch',
     width: '100%',
-    height: 'max(calc(var(--vh, 1) * 100), 360px)',
+    height: '100%',
     left: 0,
     top: 0,
     right: 0,
