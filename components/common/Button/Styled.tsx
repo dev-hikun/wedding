@@ -19,10 +19,6 @@ const IconWrapper = styled('span', {
   display: 'flex',
   lineHeight: `${IconButtonSize[size]}px`,
   fontSize: IconButtonSize[size],
-  svg: {
-    width: IconButtonSize[size],
-    height: IconButtonSize[size],
-  },
   '&:not(:disabled)': {
     cursor: 'pointer',
   },

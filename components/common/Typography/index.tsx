@@ -24,7 +24,7 @@ const Typography: FCChildren<TypographyProps> = forwardRef(
       css: propCss,
       children,
       color = 'text',
-      variant = 'body1',
+      variant = 'title20',
       align = 'inherit',
       noWrap = false,
       ...props

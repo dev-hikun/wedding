@@ -3,5 +3,6 @@ export const IconButtonSize = {
   sm: 20,
   md: 24,
   lg: 40,
+  map: 48,
 } as const;
 export type IconButtonSizeType = typeof IconButtonSize;

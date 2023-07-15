@@ -3,11 +3,6 @@ import type { Property } from 'csstype';
 
 export const defaultVariantMapping = {
   pageTitle: 'p',
-  h2: 'h2',
-  h3: 'h3',
-  h4: 'h4',
-  h5: 'h5',
-  h6: 'h6',
   introWe: 'p',
   introMarriage: 'span',
   introDo: 'span',
@@ -16,8 +11,10 @@ export const defaultVariantMapping = {
   body1: 'p',
   body2: 'p',
   body3: 'p',
-  body4: 'p',
   inherit: 'p',
+  title14: 'p',
+  title18: 'p',
+  title20: 'p',
 } as const;
 
 export type TypographyVariantType = keyof typeof defaultVariantMapping;

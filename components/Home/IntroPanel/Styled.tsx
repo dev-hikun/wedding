@@ -15,7 +15,7 @@ const ImageWrapper = styled.div({
   position: 'relative',
   zIndex: 0,
   flex: '1 0 100%',
-  img: {
+  '& > img': {
     objectFit: 'cover',
   },
   '&::after': {

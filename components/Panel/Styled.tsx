@@ -6,7 +6,7 @@ const Panel = styled.section(({ theme }) => ({
   minHeight: 'max(calc(var(--vh, 1) * 100), 600px)',
   position: 'relative',
   backgroundColor: theme.color.white,
-  img: {
+  '&>img': {
     objectFit: 'cover',
   },
 }));

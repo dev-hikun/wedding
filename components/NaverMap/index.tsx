@@ -64,8 +64,10 @@ export default NaverMap;
 
 const Styled = {
   MapWrapper: styled.div(({ theme }) => ({
-    width: '100%',
+    width: `calc(100% - ${spacing[40]}px)`,
     position: 'relative',
+    margin: `0 ${spacing[20]}px`,
+    background: color.gray,
     '::before': {
       content: '""',
       paddingBottom: '100%',

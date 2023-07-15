@@ -6,6 +6,7 @@ const color = {
   white: '#ffffff',
   text: '#333',
   gray: '#999',
+  gray050: '#fafafa',
   gray100: '#e2e2e2',
 } as const;
 export default color;

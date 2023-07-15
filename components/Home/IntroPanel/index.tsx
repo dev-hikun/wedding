@@ -34,16 +34,16 @@ const IntroPanel = () => {
       <Styled.BottomContainer>
         <Styled.NameContainer>
           <Typography align="center">이희현</Typography>
-          <Typography align="center" variant="body2" className="and">
+          <Typography align="center" variant="title14" className="and">
             그리고
           </Typography>
           <Typography align="center">오쿠다이라미스즈</Typography>
         </Styled.NameContainer>
         <div>
-          <Typography color="gray" align="right" variant="body2">
+          <Typography color="gray" align="right" variant="title14">
             2023년 12월 09일 토요일 오후 다섯시
           </Typography>
-          <Typography color="gray" align="right" variant="body2">
+          <Typography color="gray" align="right" variant="title14">
             라온제나 분당 플로렌스 단독홀
           </Typography>
         </div>

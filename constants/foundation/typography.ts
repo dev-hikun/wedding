@@ -20,20 +20,28 @@ const TypographyStyle: Partial<Record<TypographyVariantType, CSSInterpolation>> 
     fontSize: 18,
     fontWeight: '500',
   },
-  body1: {
+  title20: {
     fontSize: 20,
     fontWeight: '500',
   },
-  body2: {
+  title14: {
     fontSize: 14,
     fontWeight: '500',
   },
-  body3: {
+  title18: {
+    fontSize: 18,
+    fontWieght: '500',
+  },
+  body1: {
+    fontSize: 14,
+    fontWeight: '400',
+  },
+  body2: {
     fontSize: 16,
     fontWeight: '400',
     lineHeight: 2.5,
   },
-  body4: {
+  body3: {
     fotnSize: 18,
     fontWeight: '400',
     lineHeight: '40px',
