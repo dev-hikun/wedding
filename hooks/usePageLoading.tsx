@@ -1,9 +1,10 @@
 import { useCallback, useContext } from 'react';
 
-import { LoadingContext } from 'components/PageLoading';
+import { Context } from 'components/PageLoading/Context';
 
 const usePageLoading = () => {
-  const { setIsLoading } = useContext(LoadingContext);
+  const { setIsLoading } = useContext(Context);
+
   return useCallback(
     (isLoading: boolean) => {
       if (document) {

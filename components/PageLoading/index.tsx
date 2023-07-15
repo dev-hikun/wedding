@@ -1,27 +1,21 @@
 /* eslint-disable prettier/prettier */
-import { createContext, useState, type Dispatch, type SetStateAction } from 'react';
+import { useState } from 'react';
 
 import styled from '@emotion/styled';
 
 import animationData from 'assets/json/coupleLottie.json';
 import { hiddenText } from 'assets/styles/mixins';
 import Lottie from 'components/common/Lottie';
+import LoadingContext from 'components/PageLoading/Context';
 import type { FCChildren } from 'types/common';
-
-export const LoadingContext = createContext<{
-  setIsLoading: Dispatch<SetStateAction<boolean>>;
-}>({
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  setIsLoading: () => {},
-});
 
 const PageLoading: FCChildren = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   return (
-    <LoadingContext.Provider value={{ setIsLoading }}>
-      {children}
-      {isLoading && (
+    <>
+      <LoadingContext.Provider setIsLoading={setIsLoading}>{children}</LoadingContext.Provider>
+      {isLoading && document && (
         <Styled.Loading>
           <Styled.LottieWrapper>
             <Lottie animationData={animationData} width="100%" height="100%" />
@@ -30,9 +24,10 @@ const PageLoading: FCChildren = ({ children }) => {
           <Styled.Text>페이지 로딩중입니다.</Styled.Text>
         </Styled.Loading>
       )}
-    </LoadingContext.Provider>
+    </>
   );
 };
+
 export default PageLoading;
 const Styled = {
   Loading: styled.div(({ theme }) => ({

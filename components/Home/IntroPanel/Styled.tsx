@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 import PanelComponent from 'components/Panel';
+import { spacing } from 'constants/theme';
 
 const Panel = styled(PanelComponent)({
   display: 'flex',
@@ -20,7 +21,7 @@ const ImageWrapper = styled.div({
   '&::after': {
     display: 'block',
     content: '""',
-    paddingBottom: `${580 / 3.9}%`,
+    paddingBottom: `${520 / 3.9}%`,
   },
 });
 
@@ -37,7 +38,7 @@ const NoticeContainer = styled.div(({ theme }) => ({
 
 const BottomContainer = styled.section({
   display: 'flex',
-  padding: '44px 32px',
+  padding: `${spacing[12]}px ${spacing[20]}px ${spacing[20]}px`,
   flex: '1 0 100%',
   justifyContent: 'space-between',
   flexDirection: 'column',
@@ -54,7 +55,7 @@ const NameContainer = styled.div(({ theme }) => ({
 }));
 
 const LineBox = styled.div({
-  margin: 16,
+  margin: spacing[16],
   position: 'absolute',
   zIndex: 1,
   inset: 0,

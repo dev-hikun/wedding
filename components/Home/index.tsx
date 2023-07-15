@@ -8,12 +8,13 @@ import usePageLoading from 'hooks/usePageLoading';
 
 const Home = () => {
   const toggle = usePageLoading();
+
   useEffect(() => {
     if (window) {
       toggle(true);
-      setTimeout(() => toggle(false), 1500);
     }
   }, [toggle]);
+
   return (
     <Styled.Container>
       <IntroPanel />

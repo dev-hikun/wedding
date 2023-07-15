@@ -1,22 +1,27 @@
+import { memo, useCallback } from 'react';
+
 import Image from 'next/image';
 
 import Typography from 'components/common/Typography';
 import Styled from 'components/Home/IntroPanel/Styled';
+import usePageLoading from 'hooks/usePageLoading';
 
 import introPhoto from 'assets/images/main-photo.png';
-
 const IntroPanel = () => {
+  const toggle = usePageLoading();
+  const handleMainPhotoLoad = useCallback(() => setTimeout(() => toggle(false), 1500), [toggle]);
+
   return (
     <Styled.Panel>
       <Styled.ImageWrapper>
         <Image
           fill
-          css={{ objectFit: 'cover' }}
           sizes="100%"
           src={introPhoto}
           alt="희현x스즈"
           placeholder="blur"
           blurDataURL={introPhoto.blurDataURL}
+          onLoad={handleMainPhotoLoad}
         />
         <Styled.NoticeContainer>
           <Typography align="center" variant="introWe">
@@ -47,4 +52,4 @@ const IntroPanel = () => {
     </Styled.Panel>
   );
 };
-export default IntroPanel;
+export default memo(IntroPanel);

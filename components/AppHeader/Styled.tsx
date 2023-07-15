@@ -1,12 +1,13 @@
 import styled from '@emotion/styled';
 
 import { mediaBreakUps } from 'assets/styles/breakpoints';
+import { spacing } from 'constants/theme';
 
 const Header = styled.header(({ theme }) => ({
   position: 'fixed',
   display: 'flex',
   width: '100%',
-  padding: 16,
+  padding: spacing[16],
   opacity: 0,
   top: -56,
   background: '#ffffff',
