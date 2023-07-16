@@ -39,7 +39,7 @@ const MessagePanel = () => {
 
       <Styled.FamilyContainer>
         <Styled.NameContainer>
-          <Styled.ParentNames whiteSpace="pre-wrap" align="justify">
+          <Styled.ParentNames whiteSpace="pre-wrap" variant="title18" align="justify">
             {'이   규 근\n손        란'}
           </Styled.ParentNames>
           <Typography variant="body2">의 장남</Typography>
@@ -48,7 +48,7 @@ const MessagePanel = () => {
           </Styled.HeroName>
         </Styled.NameContainer>
         <Styled.NameContainer>
-          <Styled.ParentNames whiteSpace="pre-wrap" align="justify">
+          <Styled.ParentNames whiteSpace="pre-wrap" variant="title18" align="justify">
             {'오쿠다이라 카즈오\n오쿠다이라 미츠코'}
           </Styled.ParentNames>
           <Typography variant="body2">의 차녀</Typography>

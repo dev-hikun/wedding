@@ -27,6 +27,7 @@ const Header = styled.header({
   },
   [mediaBreakUps.md]: {
     width: 'inherit',
+    minWidth: 'max-content',
     gap: 0,
     justifyContent: 'space-between',
   },

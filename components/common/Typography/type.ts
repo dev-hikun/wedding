@@ -14,6 +14,7 @@ export const defaultVariantMapping = {
   body3: 'p',
   inherit: 'p',
   title14: 'p',
+  title16: 'p',
   title18: 'p',
   title20: 'p',
   caption: 'p',

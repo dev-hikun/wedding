@@ -35,7 +35,7 @@ const HallInformation = () => {
         <Styled.MapButton size="map" href="https://goo.gl/maps/EhGid9xnvWMEyooaA" title="Google Map" target="_blank">
           <Image src={googleMap} width={48} height={48} alt="Google Map" />
         </Styled.MapButton>
-        <Styled.MapButton size="map" href="https://naver.me/GOuTgIo4" title="Naver Map" target="_blank">
+        <Styled.MapButton size="map" href="https://naver.me/xTSwoFim" title="Naver Map" target="_blank">
           <Image src={naverMap} width={48} height={48} alt="Naver Map" />
         </Styled.MapButton>
         <Styled.MapButton size="map" href="http://kko.to/iSl2cx_lMC" title="Google Map" target="_blank">

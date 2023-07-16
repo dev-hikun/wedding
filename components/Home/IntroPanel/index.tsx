@@ -9,7 +9,7 @@ import introPhoto from 'assets/images/main-photo.png';
 const IntroPanel = () => {
   return (
     <Styled.Panel>
-      <Styled.ImageWrapper css={{ width: '100%' }}>
+      <Styled.ImageWrapper>
         <Image
           fill
           sizes="100%"

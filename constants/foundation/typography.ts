@@ -1,5 +1,6 @@
 import type { CSSInterpolation } from '@emotion/serialize';
 
+import { mediaBreakUps } from 'assets/styles/breakpoints';
 import type { TypographyVariantType } from 'components/common/Typography/type';
 
 const TypographyStyle: Partial<Record<TypographyVariantType, CSSInterpolation>> = {
@@ -19,23 +20,33 @@ const TypographyStyle: Partial<Record<TypographyVariantType, CSSInterpolation>> 
   },
   introMarriage: {
     fontSize: 28,
-    fontWeight: '500',
+    fontWeight: '700',
   },
   introDo: {
+    fontSize: 18,
+    fontWeight: '500',
+  },
+  title14: {
+    fontSize: 14,
+    fontWeight: '500',
+    [mediaBreakUps.md]: {
+      fontSize: 16,
+    },
+  },
+  title16: {
+    fontSize: 16,
+    fontWeight: '500',
+  },
+  title18: {
     fontSize: 18,
     fontWeight: '500',
   },
   title20: {
     fontSize: 20,
     fontWeight: '500',
-  },
-  title14: {
-    fontSize: 14,
-    fontWeight: '500',
-  },
-  title18: {
-    fontSize: 18,
-    fontWieght: '500',
+    [mediaBreakUps.md]: {
+      fontSize: 24,
+    },
   },
   caption: {
     fontSize: 10,

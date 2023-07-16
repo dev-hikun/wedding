@@ -1,6 +1,5 @@
 import { forwardRef, type ElementType, type ForwardedRef } from 'react';
 
-import { css } from '@emotion/react';
 import type { CSSInterpolation } from '@emotion/serialize';
 
 import Styled from 'components/common/Typography/Styled';
@@ -41,10 +40,7 @@ const Typography: FCChildren<TypographyProps> = forwardRef(
         color={color}
         as={Component}
         className={classes}
-        css={css`
-          ${TypographyStyle[variant]};
-          ${propCss};
-        `}
+        css={[TypographyStyle[variant], propCss]}
         {...props}
       >
         {children}
