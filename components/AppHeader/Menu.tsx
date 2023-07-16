@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import type { AnimationItem } from 'lottie-web';
 
 import animationData from 'assets/json/menuLottie.json';
+import theme from 'assets/styles/theme';
 import IconButton from 'components/common/Button/IconButton';
 import Lottie from 'components/common/Lottie';
 
@@ -46,7 +47,7 @@ const Menu: FC<MenuProps> = ({ setIsOpen }) => {
 export default memo(Menu);
 
 const Styled = {
-  Button: styled(IconButton)(({ theme }) => ({
+  Button: styled(IconButton)({
     position: 'fixed',
     top: 16,
     right: 16,
@@ -56,5 +57,5 @@ const Styled = {
     '&&&': {
       padding: theme.spacing[4],
     },
-  })),
+  }),
 };

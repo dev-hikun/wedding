@@ -1,14 +1,17 @@
 import { useRef } from 'react';
 
 import styled from '@emotion/styled';
+import { useRouter } from 'next/router';
 import NextScript from 'next/script';
 
 import { FONT_CSS_VAR } from 'assets/fonts/notoSerif';
 import { color, spacing } from 'constants/theme';
 import usePageLoading from 'hooks/usePageLoading';
+import type { Locale } from 'types/common';
 
 const NaverMap = () => {
   const map = useRef<HTMLDivElement | null>(null);
+  const { locale } = useRouter();
   const toggle = usePageLoading();
   const handleScriptLoad = async () => {
     if (!map.current) {
@@ -48,7 +51,7 @@ const NaverMap = () => {
   };
   return (
     <>
-      <Styled.MapWrapper ref={map} />
+      <Styled.MapWrapper ref={map} locale={locale as Locale['locale']} />
       <NextScript
         id="naver-map"
         // rewrite를 통해 가려줄까도 했는데, 어차피 콘솔에서 URL 안맞으면 호출불가
@@ -63,7 +66,7 @@ const NaverMap = () => {
 export default NaverMap;
 
 const Styled = {
-  MapWrapper: styled.div(({ theme }) => ({
+  MapWrapper: styled.div<Locale>(({ locale }) => ({
     width: '100%',
     position: 'relative',
     background: color.gray,
@@ -76,7 +79,7 @@ const Styled = {
 
     '.marker-text': {
       padding: spacing[8],
-      fontFamily: FONT_CSS_VAR[theme.locale],
+      fontFamily: FONT_CSS_VAR[locale],
       color: color.text,
       b: { fontSize: 16 },
       p: { fontSize: 14, '+p': { fontSize: 12 } },

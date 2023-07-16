@@ -1,15 +1,17 @@
 import styled from '@emotion/styled';
 import Image from 'next/image';
 
-const Panel = styled.section(({ theme }) => ({
+import { color } from 'constants/theme';
+
+const Panel = styled.section({
   width: '100%',
   minHeight: 'max(calc(var(--vh, 1) * 100), 550px)',
   position: 'relative',
-  backgroundColor: theme.color.white,
+  backgroundColor: color.white,
   '&>img': {
     objectFit: 'cover',
   },
-}));
+});
 
 const Background = styled(Image)({
   zIndex: 0,

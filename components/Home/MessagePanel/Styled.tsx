@@ -31,14 +31,14 @@ const LineWrapper = styled.div({
   },
 });
 
-const FamilyContainer = styled.div(({ theme }) => ({
+const FamilyContainer = styled.div({
   display: 'flex',
   flexDirection: 'column',
-  gap: theme.spacing[8],
+  gap: spacing[8],
   alignSelf: 'stretch',
   justifyContent: 'space-evenly',
   flex: '1 0 100%',
-}));
+});
 
 const NameContainer = styled.div({
   width: '100%',

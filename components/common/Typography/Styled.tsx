@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 
-import { FONT_CSS_VAR } from 'assets/fonts/notoSerif';
 import type { TypographyRootProps } from 'components/common/Typography/type';
+import { color } from 'constants/theme';
 
-const Typography = styled.span<TypographyRootProps>(({ theme, align, noWrap, color, whiteSpace }) => ({
-  color: theme.color[color],
+const Typography = styled.span<TypographyRootProps>(({ align, noWrap, color: propsColor, whiteSpace }) => ({
+  color: color[propsColor],
   ...(align && {
     textAlign: align,
   }),
@@ -14,7 +14,6 @@ const Typography = styled.span<TypographyRootProps>(({ theme, align, noWrap, col
     whiteSpace: 'nowrap',
   }),
   whiteSpace,
-  fontFamily: FONT_CSS_VAR[theme.locale],
 }));
 
 const Styled = {
