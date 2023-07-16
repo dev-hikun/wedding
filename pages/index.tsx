@@ -1,4 +1,4 @@
-import type { GetServerSideProps } from 'next';
+import type { GetStaticProps } from 'next';
 import Head from 'next/head';
 
 import Home from 'components/Home';
@@ -22,7 +22,7 @@ const MainPage: NextPageWithLayout = () => (
 export default MainPage;
 MainPage.Layout = Layout;
 
-export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: { locale },
   };
