@@ -1,5 +1,4 @@
 import { spacing, color } from 'constants/theme';
-import type { Locale } from 'types/common';
 
 const theme = {
   color,
@@ -10,11 +9,6 @@ const theme = {
   spacing,
 } as const;
 
-const getTheme = ({ locale }: Locale) => ({
-  ...theme,
-  locale,
-});
+export type Theme = typeof theme;
 
-export type Theme = ReturnType<typeof getTheme>;
-
-export default getTheme;
+export default theme;

@@ -3,6 +3,11 @@ import type { CSSInterpolation } from '@emotion/serialize';
 import type { TypographyVariantType } from 'components/common/Typography/type';
 
 const TypographyStyle: Partial<Record<TypographyVariantType, CSSInterpolation>> = {
+  h1: {
+    fontSize: 16,
+    fontWeight: '700',
+    lineHeight: 'inherit',
+  },
   pageTitle: {
     fontSize: 20,
     fontWeight: '500',

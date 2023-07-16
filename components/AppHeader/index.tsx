@@ -1,8 +1,8 @@
 import { type ComponentProps, type FC, useState } from 'react';
 
+import LanguageToggle from 'components/AppHeader/LanguageToggle';
 import Menu from 'components/AppHeader/Menu';
 import Styled from 'components/AppHeader/Styled';
-import IconButton from 'components/common/Button/IconButton';
 import Typography from 'components/common/Typography';
 import { clsx } from 'utils/common';
 
@@ -15,9 +15,8 @@ const AppHeader: FC<AppHeaderProps> = ({ className, ...props }) => {
     <>
       <Menu setIsOpen={setIsOpen} />
       <Styled.Header className={classes} {...props}>
-        <Typography align="left">이희현 & 미스즈</Typography>
-        <IconButton>🇰🇷</IconButton>
-        <IconButton>🇯🇵</IconButton>
+        <Typography variant="h1">희현 & 미스즈 결혼합니다 👰🏻‍♀️💍🤵🏻</Typography>
+        <LanguageToggle />
       </Styled.Header>
     </>
   );

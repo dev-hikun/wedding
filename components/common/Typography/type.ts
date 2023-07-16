@@ -2,6 +2,7 @@ import type { Theme } from '@emotion/react';
 import type { Property } from 'csstype';
 
 export const defaultVariantMapping = {
+  h1: 'h1',
   pageTitle: 'p',
   introWe: 'p',
   introMarriage: 'span',

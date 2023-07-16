@@ -1,1 +1,4 @@
-export const clsx = (classNames: string[]) => classNames.filter(Boolean).join(' ');
+export const clsx = (classNames: string[]) => {
+  const filtered = classNames.filter((value) => !!value);
+  return filtered.length ? filtered.join(' ') : undefined;
+};
