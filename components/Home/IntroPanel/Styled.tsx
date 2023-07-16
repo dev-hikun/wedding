@@ -21,7 +21,7 @@ const ImageWrapper = styled.div({
   '&::after': {
     display: 'block',
     content: '""',
-    paddingBottom: `${520 / 3.9}%`,
+    paddingBottom: `${420 / 3.9}%`,
   },
 });
 
@@ -39,6 +39,7 @@ const NoticeContainer = styled.div(({ theme }) => ({
 const BottomContainer = styled.section({
   display: 'flex',
   padding: `${spacing[12]}px ${spacing[20]}px ${spacing[20]}px`,
+  gap: spacing[8],
   flex: '1 0 100%',
   justifyContent: 'space-between',
   flexDirection: 'column',
@@ -46,7 +47,10 @@ const BottomContainer = styled.section({
 });
 
 const NameContainer = styled.div(({ theme }) => ({
-  textAlign: 'center',
+  flex: '1 0 100%',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
   lineHeight: '30px',
   '.and': {
     color: theme.color.gray,

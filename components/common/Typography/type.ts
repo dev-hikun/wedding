@@ -15,6 +15,7 @@ export const defaultVariantMapping = {
   title14: 'p',
   title18: 'p',
   title20: 'p',
+  caption: 'p',
 } as const;
 
 export type TypographyVariantType = keyof typeof defaultVariantMapping;

@@ -2,22 +2,24 @@ import styled from '@emotion/styled';
 
 import Typography from 'components/common/Typography';
 import PanelComponent from 'components/Panel';
+import { spacing } from 'constants/theme';
 
-const Panel = styled(PanelComponent)(({ theme }) => ({
+const Panel = styled(PanelComponent)({
   display: 'flex',
   flexDirection: 'column',
-  justifyContent: 'center',
+  justifyContent: 'space-between',
   alignItems: 'center',
-  gap: theme.spacing[40] + theme.spacing[16],
-  padding: '16px 16px 40px',
-}));
+  gap: spacing[16],
+  padding: spacing[16],
+});
 
-const ContentContainer = styled.div(({ theme }) => ({
+const TextWrapper = styled.div({
+  alignSelf: 'stretch',
+  flex: '1 0 100%',
   display: 'flex',
   flexDirection: 'column',
-  gap: theme.spacing[60],
-  alignSelf: 'stretch',
-}));
+  justifyContent: 'space-evenly',
+});
 
 const LineWrapper = styled.div({
   alignSelf: 'stretch',
@@ -25,15 +27,17 @@ const LineWrapper = styled.div({
   '::after': {
     content: '""',
     display: 'block',
-    marginBottom: `${600 / 179}%`,
+    marginBottom: `${550 / 179}%`,
   },
 });
 
 const FamilyContainer = styled.div(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
-  gap: theme.spacing[40],
+  gap: theme.spacing[8],
   alignSelf: 'stretch',
+  justifyContent: 'space-evenly',
+  flex: '1 0 100%',
 }));
 
 const NameContainer = styled.div({
@@ -56,7 +60,7 @@ const HeroName = styled(Typography)({
 
 const Styled = {
   Panel,
-  ContentContainer,
+  TextWrapper,
   LineWrapper,
   FamilyContainer,
   NameContainer,

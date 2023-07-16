@@ -6,7 +6,7 @@ const TypographyStyle: Partial<Record<TypographyVariantType, CSSInterpolation>> 
   pageTitle: {
     fontSize: 20,
     fontWeight: '500',
-    lineHeight: '80px',
+    lineHeight: 2.5,
   },
   introWe: {
     fontSize: 36,
@@ -31,6 +31,11 @@ const TypographyStyle: Partial<Record<TypographyVariantType, CSSInterpolation>> 
   title18: {
     fontSize: 18,
     fontWieght: '500',
+  },
+  caption: {
+    fontSize: 10,
+    fontWeight: '400',
+    lineHeight: 1.2,
   },
   body1: {
     fontSize: 14,

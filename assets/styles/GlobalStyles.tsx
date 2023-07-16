@@ -22,7 +22,7 @@ const GlobalStyles = () => (
         font-family: ${FONT_CSS_VAR[locale]};
         line-height: 1.5;
         height: 100%;
-        min-height: 600px;
+        min-height: 550px;
         min-width: 360px;
         background-color: ${color.gray100};
       }

@@ -8,5 +8,6 @@ const color = {
   gray: '#999',
   gray050: '#fafafa',
   gray100: '#e2e2e2',
+  gray200: '#b5b5b5',
 } as const;
 export default color;
