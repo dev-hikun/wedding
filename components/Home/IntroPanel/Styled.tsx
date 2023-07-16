@@ -63,7 +63,7 @@ const LineBox = styled.div({
   zIndex: 1,
   inset: 0,
   border: '1px solid #c5c5c5',
-  width: 'max(calc(100% - 32px), 328px)',
+  width: 'calc(100% - 32px)',
   height: 'calc(100% - 32px)',
   background: 'transparent',
 });

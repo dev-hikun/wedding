@@ -27,7 +27,6 @@ const GlobalStyles = () => {
           line-height: 1.5;
           height: 100%;
           min-height: 550px;
-          min-width: 360px;
           background-color: ${color.white};
         }
 
