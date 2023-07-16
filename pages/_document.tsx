@@ -4,13 +4,18 @@ import { Html, Main, NextScript, Head } from 'next/document';
 
 import { ja, ko } from 'assets/fonts/notoSerif';
 import type { Locale } from 'types/common';
-import { clsx } from 'utils/common';
 
 const document: FC<Locale> = ({ locale }) => {
   return (
-    <Html lang={locale}>
+    <Html
+      lang={locale}
+      css={{
+        '--noto-serif-ko': ko.style.fontFamily,
+        '--noto-serif-jp': ja.style.fontFamily,
+      }}
+    >
       <Head />
-      <body className={clsx([ja.variable, ko.variable])}>
+      <body>
         <Main />
         <NextScript />
       </body>

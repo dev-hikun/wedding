@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import Link from 'next/link';
 
 import { mediaBreakUps } from 'assets/styles/breakpoints';
 import theme from 'assets/styles/theme';
@@ -17,6 +16,7 @@ const Header = styled.header({
   transitionDuration: '.3s',
   zIndex: theme.zIndex.header,
   msTransitionTimingFunction: 'ease-in-out',
+  flexDirection: 'column',
   justifyContent: 'flex-start',
   gap: theme.spacing[16],
   alignItems: 'center',
@@ -29,6 +29,7 @@ const Header = styled.header({
     width: 'inherit',
     minWidth: 'max-content',
     gap: 0,
+    flexDirection: 'row',
     justifyContent: 'space-between',
   },
 });
@@ -70,6 +71,6 @@ const Styled = {
     display: 'inline-flex',
     overflow: 'hidden',
   }),
-  ToggleButton: ToggleButton.withComponent(Link),
+  ToggleButton: ToggleButton.withComponent('a'),
 };
 export default Styled;
