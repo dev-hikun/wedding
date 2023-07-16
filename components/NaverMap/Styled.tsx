@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import { FONT_CSS_VAR } from 'assets/fonts/notoSerif';
+import { FONT_CSS_VAR } from 'assets/fonts';
 import { color, spacing } from 'constants/theme';
 import type { Locale } from 'types/common';
 

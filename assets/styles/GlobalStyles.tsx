@@ -1,7 +1,7 @@
 import { Global, css } from '@emotion/react';
 import { useRouter } from 'next/router';
 
-import { FONT_CSS_VAR } from 'assets/fonts/notoSerif';
+import { FONT_CSS_VAR } from 'assets/fonts';
 import { HideScrollbarStyle } from 'assets/styles/mixins';
 import { color } from 'constants/theme';
 

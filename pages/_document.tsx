@@ -2,20 +2,14 @@ import type { FC } from 'react';
 
 import { Html, Main, NextScript, Head } from 'next/document';
 
-import { ja, ko } from 'assets/fonts/notoSerif';
+import { ja, ko } from 'assets/fonts';
 import type { Locale } from 'types/common';
 
 const document: FC<Locale> = ({ locale }) => {
   return (
-    <Html
-      lang={locale}
-      css={{
-        '--noto-serif-ko': ko.style.fontFamily,
-        '--noto-serif-jp': ja.style.fontFamily,
-      }}
-    >
+    <Html lang={locale}>
       <Head />
-      <body>
+      <body className={[ja.variable, ko.variable].join(' ')}>
         <Main />
         <NextScript />
       </body>
