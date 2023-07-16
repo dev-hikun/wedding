@@ -2,6 +2,8 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
 
+const { i18n } = require('./next-i18next.config');
+
 module.exports = () => {
   /** @type {import('next').NextConfig} */
   const nextConfig = {
@@ -11,11 +13,7 @@ module.exports = () => {
       emotion: true,
     },
     output: 'standalone',
-    i18n: {
-      defaultLocale: 'ko',
-      locales: ['ko', 'ja'],
-      localeDetection: true,
-    },
+    i18n,
     optimizeFonts: true,
   };
   return withBundleAnalyzer(nextConfig);

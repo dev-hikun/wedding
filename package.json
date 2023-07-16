@@ -13,11 +13,13 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "i18next": "^23.2.11",
     "lottie-web": "^5.12.2",
     "next": "latest",
     "next-i18next": "^14.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-i18next": "^13.0.2",
     "sharp": "^0.32.3"
   },
   "devDependencies": {

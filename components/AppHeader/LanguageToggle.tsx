@@ -13,7 +13,7 @@ const LanguageToggle = () => {
         aria-pressed={isKorean}
         className={clsx([isKorean && 'active'])}
         aria-label="korean"
-        href="/"
+        href="/ko"
         locale="ko"
       >
         🇰🇷
@@ -23,7 +23,7 @@ const LanguageToggle = () => {
         aria-pressed={!isKorean}
         className={clsx([!isKorean && 'active'])}
         aria-label="japanese"
-        href="/"
+        href="/ja"
         locale="ja"
       >
         🇯🇵

@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 
 import type { AppProps as NextAppProps } from 'next/app';
+import { appWithTranslation } from 'next-i18next';
 
 import GlobalStyles from 'assets/styles/GlobalStyles';
 import DefaultLayout from 'components/Layout/Default';
@@ -40,4 +41,4 @@ const App = ({ Component, pageProps }: AppProps) => {
   );
 };
 
-export default App;
+export default appWithTranslation(App);
