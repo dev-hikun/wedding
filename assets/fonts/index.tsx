@@ -1,4 +1,4 @@
-import { Noto_Serif_KR, Noto_Serif_JP } from 'next/font/google';
+import { Noto_Serif_KR, Noto_Serif_JP } from '@next/font/google';
 
 export const FONT_CSS_VAR = {
   ko: 'var(--noto-serif-ko)',
@@ -10,6 +10,7 @@ export const ko = Noto_Serif_KR({
   variable: '--noto-serif-ko',
   style: 'normal',
   display: 'swap',
+  preload: true,
   subsets: ['latin'],
   fallback: [
     '-apple-system',
@@ -28,6 +29,7 @@ export const ja = Noto_Serif_JP({
   variable: '--noto-serif-ja',
   style: 'normal',
   display: 'swap',
+  preload: true,
   subsets: ['latin'],
   fallback: [
     '-apple-system',

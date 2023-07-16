@@ -14,7 +14,7 @@ module.exports = () => {
     },
     output: 'standalone',
     i18n,
-    optimizeFonts: true,
+    optimizeFonts: false,
   };
   return withBundleAnalyzer(nextConfig);
 };

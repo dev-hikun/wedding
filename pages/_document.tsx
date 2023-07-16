@@ -5,10 +5,12 @@ import Script from 'next/script';
 
 import { ja, ko } from 'assets/fonts';
 import type { Locale } from 'types/common';
+import { clsx } from 'utils/common';
 
 const document: FC<Locale> = ({ locale }) => {
+  const classNames = clsx([ko.variable, ja.variable]);
   return (
-    <Html lang={locale}>
+    <Html lang={locale} className={locale === 'ja' ? ja.className : ko.className}>
       <Head>
         <Script id="gtag" strategy="lazyOnload" src="https://www.googletagmanager.com/gtag/js?id=G-HV9ZMJHDB5">
           {
@@ -16,7 +18,7 @@ const document: FC<Locale> = ({ locale }) => {
           }
         </Script>
       </Head>
-      <body className={[ja.variable, ko.variable].join(' ')}>
+      <body className={classNames}>
         <Main />
         <NextScript />
       </body>
