@@ -1,16 +1,17 @@
-import { Html, Main, NextScript, type DocumentProps, Head } from 'next/document';
+import type { FC } from 'react';
+
+import { Html, Main, NextScript, Head } from 'next/document';
 
 import { variable } from 'assets/fonts';
+import type { Locale } from 'types/common';
 
-const Document = ({ locale }: DocumentProps) => {
-  return (
-    <Html lang={locale}>
-      <Head />
-      <body className={variable[locale]}>
-        <Main />
-        <NextScript />
-      </body>
-    </Html>
-  );
-};
-export default Document;
+const document: FC<Locale> = ({ locale }) => (
+  <Html lang={locale}>
+    <Head />
+    <body className={variable[locale]}>
+      <Main />
+      <NextScript />
+    </body>
+  </Html>
+);
+export default document;

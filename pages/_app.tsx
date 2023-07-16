@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import type { AppProps as NextAppProps } from 'next/app';
 
 import GlobalStyles from 'assets/styles/GlobalStyles';
-import EmotionCacheProvider from 'components/Emotion/EmotionCacheProvider';
 import DefaultLayout from 'components/Layout/Default';
 import PageLoading from 'components/PageLoading';
 import type { NextPageWithLayout } from 'types/common';
@@ -30,14 +29,14 @@ const App = ({ Component, pageProps }: AppProps) => {
   });
 
   return (
-    <EmotionCacheProvider>
+    <>
       <GlobalStyles />
       <PageLoading>
         <Layout>
           <Component {...pageProps} />
         </Layout>
       </PageLoading>
-    </EmotionCacheProvider>
+    </>
   );
 };
 

@@ -8,7 +8,7 @@ import type { FCChildren } from 'types/common';
 const Loading = dynamic(() => import('./Loading'), { ssr: false });
 
 const PageLoading: FCChildren = ({ children }) => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
     <>

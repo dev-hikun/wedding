@@ -1,9 +1,10 @@
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 
 import Button from 'components/common/Button/Button';
 import Typography from 'components/common/Typography';
 import Styled from 'components/Home/HallInformationPanel/Styled';
-import NaverMap from 'components/NaverMap';
+import MapStyled from 'components/NaverMap/Styled';
 import Line from 'components/Panel/Line';
 import { spacing } from 'constants/theme';
 
@@ -11,6 +12,8 @@ import googleMap from 'assets/images/google-map.png';
 import kakaoMap from 'assets/images/kakao-map.png';
 import naverMap from 'assets/images/naver-map.png';
 import tMap from 'assets/images/t-map.png';
+
+const NaverMap = dynamic(import('../../NaverMap'), { ssr: false, loading: () => <MapStyled.MapWrapper /> });
 
 const HallInformation = () => {
   return (

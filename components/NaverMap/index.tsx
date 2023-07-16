@@ -1,11 +1,10 @@
 import { useRef } from 'react';
 
-import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 import NextScript from 'next/script';
 
-import { FONT_CSS_VAR } from 'assets/fonts/notoSerif';
-import { color, spacing } from 'constants/theme';
+import Styled from 'components/NaverMap/Styled';
+import { color } from 'constants/theme';
 import usePageLoading from 'hooks/usePageLoading';
 import type { Locale } from 'types/common';
 
@@ -64,25 +63,3 @@ const NaverMap = () => {
 };
 
 export default NaverMap;
-
-const Styled = {
-  MapWrapper: styled.div<Locale>(({ locale }) => ({
-    width: '100%',
-    position: 'relative',
-    background: color.gray,
-    '::before': {
-      content: '""',
-      paddingBottom: '80%',
-      display: 'block',
-      position: 'relative',
-    },
-
-    '.marker-text': {
-      padding: spacing[8],
-      fontFamily: FONT_CSS_VAR[locale],
-      color: color.text,
-      b: { fontSize: 16 },
-      p: { fontSize: 14, '+p': { fontSize: 12 } },
-    },
-  })),
-};
