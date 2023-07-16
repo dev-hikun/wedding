@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 
-import Button from 'components/common/Button/Button';
 import IconButton from 'components/common/Button/IconButton';
 import PanelComponent from 'components/Panel';
 import { color, spacing } from 'constants/theme';

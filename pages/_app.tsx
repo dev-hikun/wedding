@@ -1,15 +1,12 @@
 import { useEffect } from 'react';
 
-import createCache from '@emotion/cache';
-import { CacheProvider } from '@emotion/react';
 import type { AppProps as NextAppProps } from 'next/app';
 
 import GlobalStyles from 'assets/styles/GlobalStyles';
+import EmotionCacheProvider from 'components/Emotion/EmotionCacheProvider';
 import DefaultLayout from 'components/Layout/Default';
 import PageLoading from 'components/PageLoading';
 import type { NextPageWithLayout } from 'types/common';
-
-const cache = createCache({ key: 'wedding' });
 
 const setVH = () => {
   document.documentElement.style.setProperty('--vh', window.innerHeight * 0.01 + 'px');
@@ -33,14 +30,14 @@ const App = ({ Component, pageProps }: AppProps) => {
   });
 
   return (
-    <CacheProvider value={cache}>
+    <EmotionCacheProvider>
       <GlobalStyles />
       <PageLoading>
         <Layout>
           <Component {...pageProps} />
         </Layout>
       </PageLoading>
-    </CacheProvider>
+    </EmotionCacheProvider>
   );
 };
 

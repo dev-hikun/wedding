@@ -24,7 +24,6 @@ MainPage.Layout = Layout;
 
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   return {
-    // notFound: true,
     props: { locale },
   };
 };
