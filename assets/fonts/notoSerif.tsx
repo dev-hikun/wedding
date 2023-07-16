@@ -5,7 +5,7 @@ export const FONT_CSS_VAR = {
   ja: 'var(--noto-serif-ja)',
 } as const;
 
-const ko = Noto_Serif_KR({
+export const ko = Noto_Serif_KR({
   weight: ['400', '500', '700'],
   variable: '--noto-serif-ko',
   style: 'normal',
@@ -23,7 +23,7 @@ const ko = Noto_Serif_KR({
   ],
 });
 
-const ja = Noto_Serif_JP({
+export const ja = Noto_Serif_JP({
   weight: ['400', '500', '700'],
   variable: '--noto-serif-ja',
   style: 'normal',
@@ -40,6 +40,3 @@ const ja = Noto_Serif_JP({
     'sans-serif',
   ],
 });
-
-const fonts = { ko, ja };
-export default fonts;

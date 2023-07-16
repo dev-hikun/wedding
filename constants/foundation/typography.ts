@@ -49,9 +49,10 @@ const TypographyStyle: Partial<Record<TypographyVariantType, CSSInterpolation>> 
     },
   },
   caption: {
-    fontSize: 10,
+    fontSize: 12,
     fontWeight: '400',
     lineHeight: 1.2,
+    letterSpacing: -0.3,
   },
   body1: {
     fontSize: 14,
