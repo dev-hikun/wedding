@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { useTranslation } from 'next-i18next';
 
+import Gallery from 'components/Home/Gallery';
 import HallInformation from 'components/Home/HallInformationPanel';
 import IntroPanel from 'components/Home/IntroPanel';
 import MessagePanel from 'components/Home/MessagePanel';
@@ -23,6 +24,7 @@ const Home: NextPageWithLayout = () => {
       <Styled.Container>
         <IntroPanel />
         <MessagePanel />
+        <Gallery />
         <HallInformation />
       </Styled.Container>
     </>

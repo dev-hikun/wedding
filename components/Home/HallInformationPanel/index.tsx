@@ -62,7 +62,7 @@ const HallInformation = () => {
         <div>
           <Typography variant="title18">공항버스</Typography>
 
-          <Typography variant="body1">아래 버튼을 클릭하시면 더 자세히 보실 수 있습니다.</Typography>
+          <Typography variant="body1">아래 버튼을 클릭하시면 더 자세히 보실 수 있습니다. (일본어)</Typography>
           <div css={{ padding: spacing[4] }}>
             <Button>인천공항 1터미널</Button> <Button>인천공항 2터미널</Button>
           </div>

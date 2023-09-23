@@ -6,6 +6,7 @@ export const Breakpoint = {
   lg: 992,
   xl: 1200,
 } as Readonly<Record<BreakpointKey, number>>;
+export const breakpoints = (Object.keys(Breakpoint) as BreakpointKey[]).map((key) => Breakpoint[key]);
 
 export type MediaBreakDown<T extends BreakpointKey> = `@media (max-width: ${(typeof Breakpoint)[T]}px)`;
 export type ImageSizesBreakDown<T extends BreakpointKey> = `(max-width: ${(typeof Breakpoint)[T]}px)`;
