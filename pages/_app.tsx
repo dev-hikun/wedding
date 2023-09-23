@@ -22,14 +22,8 @@ const App = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {
     if (window) {
       setVH();
-      window.addEventListener('resize', setVH);
-      window.addEventListener('touchend', setVH);
-      return () => {
-        window.removeEventListener('resize', setVH);
-        window.removeEventListener('touchend', setVH);
-      };
     }
-  });
+  }, []);
 
   return (
     <div className={clsx([ko.variable, ja.variable])}>

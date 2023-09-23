@@ -5,7 +5,7 @@ import { color } from 'constants/theme';
 
 const Panel = styled.section({
   width: '100%',
-  minHeight: 'max(calc(var(--vh, 1) * 100), 550px)',
+  minHeight: 'max(calc(var(--vh, 1) * 100), 667px)',
   position: 'relative',
   backgroundColor: color.white,
   '&>img': {
