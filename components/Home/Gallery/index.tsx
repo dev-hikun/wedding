@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import Image, { type StaticImageData } from 'next/image';
+import { useTranslation } from 'react-i18next';
 import { PhotoAlbum } from 'react-photo-album';
 import type { RenderPhotoProps } from 'react-photo-album';
 import { Lightbox, type RenderSlideProps, type SlideImage } from 'yet-another-react-lightbox';
@@ -26,7 +27,6 @@ import Wedding12 from 'public/photos/wedding12.jpg';
 import Wedding13 from 'public/photos/wedding13.jpg';
 import Wedding14 from 'public/photos/wedding14.jpg';
 
-import { useTranslation } from 'react-i18next';
 const photos = [
   Wedding01,
   Wedding02,
