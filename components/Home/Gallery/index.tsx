@@ -56,6 +56,7 @@ const NextJsAlbumImage = ({
       <Image
         fill
         alt="스즈와 희현이의 스튜디오 촬영사진"
+        loading="lazy"
         src={photo}
         {...{ alt, title, onClick, className }}
         sizes="100%"

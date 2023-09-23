@@ -8,7 +8,8 @@ import Styled from 'components/Home/IntroPanel/Styled';
 
 import introPhoto from 'assets/images/main-photo.png';
 const IntroPanel = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isKorean = i18n.language === 'ko';
   return (
     <Styled.Panel>
       <Styled.ImageWrapper>
@@ -31,7 +32,16 @@ const IntroPanel = () => {
       </Styled.ImageWrapper>
       <Styled.BottomContainer>
         <Styled.NameContainer>
-          <Typography align="center">{t('이 희현')}</Typography>
+          <Typography align="center">
+            {isKorean ? (
+              t('이 희현')
+            ) : (
+              <ruby>
+                {t('이 희현')}
+                <rt>イ・ヒィヒョン</rt>
+              </ruby>
+            )}
+          </Typography>
           <Typography align="center" variant="title14" className="and">
             {t('그리고')}
           </Typography>
