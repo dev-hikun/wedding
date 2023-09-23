@@ -9,9 +9,9 @@ import Line from 'components/Panel/Line';
 
 import leaf from 'assets/images/leaf.png';
 
-const MessagePanel = () => {
-  const { t, i18n } = useTranslation();
-  const isKorean = i18n.language === 'ko';
+const MessagePanel = ({ locale }) => {
+  const { t } = useTranslation();
+  const isKorean = locale === 'ko';
   const Ruby = isKorean ? Fragment : 'ruby';
   return (
     <Styled.Panel paper>

@@ -16,7 +16,6 @@ module.exports = () => {
     i18n,
     optimizeFonts: false,
     compress: true,
-    
   };
   return withBundleAnalyzer(nextConfig);
 };

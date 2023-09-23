@@ -8,9 +8,9 @@ import MessagePanel from 'components/Home/MessagePanel';
 import Styled from 'components/Home/Styled';
 import type { NextPageWithLayout } from 'types/common';
 
-const Home: NextPageWithLayout = () => {
+const Home: NextPageWithLayout = ({ locale }) => {
   const { t } = useTranslation();
-  const titleMessage = `${t('희현')} & 미스즈 결혼합니다`;
+  const titleMessage = `${t('희현')}&${t('미스즈')} ${t('결혼')}${t('합니다.')}`;
   return (
     <>
       <Head>
@@ -22,8 +22,8 @@ const Home: NextPageWithLayout = () => {
         />
       </Head>
       <Styled.Container>
-        <IntroPanel />
-        <MessagePanel />
+        <IntroPanel locale={locale} />
+        <MessagePanel locale={locale} />
         <Gallery />
         <HallInformation />
       </Styled.Container>

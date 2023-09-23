@@ -25,6 +25,8 @@ import Wedding11 from 'public/photos/wedding11.jpg';
 import Wedding12 from 'public/photos/wedding12.jpg';
 import Wedding13 from 'public/photos/wedding13.jpg';
 import Wedding14 from 'public/photos/wedding14.jpg';
+
+import { useTranslation } from 'react-i18next';
 const photos = [
   Wedding01,
   Wedding02,
@@ -91,10 +93,11 @@ const NextJsImage = ({ slide, rect }: RenderSlideProps<SlideImage>) => {
 
 const Gallery = () => {
   const [index, setIndex] = useState(-1);
+  const { t } = useTranslation();
   return (
     <Styled.Panel>
       <Typography variant="pageTitle" align="center">
-        갤러리
+        {t('갤러리')}
       </Typography>
 
       <PhotoAlbum

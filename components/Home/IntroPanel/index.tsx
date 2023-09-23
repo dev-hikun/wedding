@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { Fragment, memo } from 'react';
 
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
@@ -7,9 +7,10 @@ import Typography from 'components/common/Typography';
 import Styled from 'components/Home/IntroPanel/Styled';
 
 import introPhoto from 'assets/images/main-photo.png';
-const IntroPanel = () => {
-  const { t, i18n } = useTranslation();
-  const isKorean = i18n.language === 'ko';
+const IntroPanel = ({ locale }) => {
+  const { t } = useTranslation();
+  const isKorean = locale === 'ko';
+  const Ruby = isKorean ? Fragment : 'ruby';
   return (
     <Styled.Panel>
       <Styled.ImageWrapper>
@@ -33,14 +34,10 @@ const IntroPanel = () => {
       <Styled.BottomContainer>
         <Styled.NameContainer>
           <Typography align="center">
-            {isKorean ? (
-              t('이 희현')
-            ) : (
-              <ruby>
-                {t('이 희현')}
-                <rt>イ・ヒィヒョン</rt>
-              </ruby>
-            )}
+            <Ruby>
+              {t('이 희현')}
+              {!isKorean && <rt>イ・ヒィヒョン</rt>}
+            </Ruby>
           </Typography>
           <Typography align="center" variant="title14" className="and">
             {t('그리고')}
