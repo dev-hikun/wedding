@@ -12,6 +12,9 @@ module.exports = () => {
     compiler: {
       emotion: true,
     },
+    images: {
+      domains: ['hikun-suzu.netlify.app', 'source.unsplash.com'],
+    },
     output: 'standalone',
     i18n,
     optimizeFonts: false,

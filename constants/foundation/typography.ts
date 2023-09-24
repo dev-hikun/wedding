@@ -68,6 +68,21 @@ const TypographyStyle: Partial<Record<TypographyVariantType, CSSInterpolation>> 
     fontWeight: '400',
     lineHeight: '40px',
   },
+  body4: {
+    fontSize: 14,
+    fontWeight: '400',
+    lineHeight: 1.5,
+  },
+  writter: {
+    fontSize: 14,
+    fontWeight: '500',
+    lineHeight: 1.5,
+  },
+  datetime: {
+    fontSize: 12,
+    fontWeight: '400',
+    lineHeight: 1.5,
+  },
 } as const;
 
 export default TypographyStyle;
