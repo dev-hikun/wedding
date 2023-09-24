@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import Image, { type StaticImageData } from 'next/image';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 import { PhotoAlbum } from 'react-photo-album';
 import type { RenderPhotoProps } from 'react-photo-album';
 import { Lightbox, type RenderSlideProps, type SlideImage } from 'yet-another-react-lightbox';

@@ -10,6 +10,10 @@ const Panel = styled(PanelComponent)({
   backgroundColor: color.gray050,
   gap: spacing[16],
   padding: spacing[16],
+
+  '.ja': {
+    letterSpacing: -0.3,
+  },
 });
 
 const MapWrapper = styled.div({
@@ -43,7 +47,7 @@ const TransportationContainer = styled.div({
   display: 'flex',
   alignSelf: 'stretch',
   flexDirection: 'column',
-  padding: `0 ${spacing[16]}px`,
+  padding: `${spacing[16]}px`,
   justifyContent: 'space-between',
   gap: spacing[8],
   flex: '1 0 100%',

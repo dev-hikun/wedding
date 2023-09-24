@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
+import { useTranslation } from 'next-i18next';
 
 import Button from 'components/common/Button/Button';
 import Typography from 'components/common/Typography';
@@ -15,20 +16,22 @@ import tMap from 'assets/images/t-map.png';
 
 const NaverMap = dynamic(import('../../NaverMap'), { ssr: false, loading: () => <MapStyled.MapWrapper /> });
 
-const HallInformation = () => {
+const HallInformation = ({ locale }) => {
+  const { t } = useTranslation();
+  const isKorean = locale === 'ko';
   return (
     <Styled.Panel>
       <Typography variant="pageTitle" align="center">
-        웨딩홀 안내
+        {t('웨딩홀 안내')}
       </Typography>
       <NaverMap />
 
       <div>
         <Typography variant="title20" align="center">
-          라온제나 분당
+          {t('라온제나 분당')}
         </Typography>
-        <Typography variant="body1" align="center">
-          경기도 성남시 분당구 성남대로 916번길 5, 관보빌딩 8층
+        <Typography variant="body1" align="center" className={locale}>
+          {t('경기도 성남시 분당구 성남대로 916번길 5')}, {t('관보빌딩 8층')}
         </Typography>
       </div>
       <Styled.MapWrapper>
@@ -48,29 +51,36 @@ const HallInformation = () => {
       <Line />
       <Styled.TransportationContainer>
         <div>
-          <Typography variant="title18">지하철</Typography>
-          <Typography variant="body1">수인분당선 야탑역 2번출구</Typography>
+          <Typography variant="title18">{t('지하철')}</Typography>
+          <Typography variant="body1">
+            {t('수인분당선')} {t('야탑역')} {t('2번출구')}
+          </Typography>
         </div>
         <div>
-          <Typography variant="title18">버스</Typography>
-          <Typography variant="body1">야탑역 정류장 하차</Typography>
+          <Typography variant="title18">{t('버스')}</Typography>
+          <Typography variant="body1">
+            {t('야탑역')} {t('정류장')} {t('하차')}
+          </Typography>
           <Typography variant="caption" align="justify">
             5, 15-1, 17, 17-1, 51, 55, 57, 77-1, 116-3, 200, 222, 950, 52, 55-1, 60, 103, 119, 220, 250, 252, 300, 340,
             340-1, 330, 350, 380, 1005, 3330, 4000, 8109, 9300, 9408, 9403, 9607, 5100, 5300
           </Typography>
         </div>
-        <div>
-          <Typography variant="title18">공항버스</Typography>
+        {!isKorean ? (
+          <div>
+            <Typography variant="title18">{t('공항버스')}</Typography>
 
-          <Typography variant="body1">아래 버튼을 클릭하시면 더 자세히 보실 수 있습니다. (일본어)</Typography>
-          <div css={{ padding: spacing[4] }}>
-            <Button>인천공항 1터미널</Button> <Button>인천공항 2터미널</Button>
+            <Typography variant="body1">{t('아래 버튼을 클릭하시면 더 자세히 보실 수 있습니다.')}</Typography>
+            <div css={{ padding: spacing[4] }}>
+              <Button>{t('인천공항 1터미널')}</Button> <Button>{t('인천공항 2터미널')}</Button>
+            </div>
           </div>
-        </div>
-        <div>
-          <Typography variant="title18">대절버스</Typography>
-          <Typography variant="body1">신랑에게 연락주세요</Typography>
-        </div>
+        ) : (
+          <div>
+            <Typography variant="title18">대절버스</Typography>
+            <Typography variant="body1">신랑에게 연락주세요</Typography>
+          </div>
+        )}
       </Styled.TransportationContainer>
     </Styled.Panel>
   );

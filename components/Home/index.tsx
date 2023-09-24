@@ -25,7 +25,7 @@ const Home: NextPageWithLayout = ({ locale }) => {
         <IntroPanel locale={locale} />
         <MessagePanel locale={locale} />
         <Gallery />
-        <HallInformation />
+        <HallInformation locale={locale} />
       </Styled.Container>
     </>
   );

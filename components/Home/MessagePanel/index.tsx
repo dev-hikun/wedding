@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 
 import Image from 'next/image';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 import Typography from 'components/common/Typography';
 import Styled from 'components/Home/MessagePanel/Styled';
