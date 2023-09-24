@@ -4,6 +4,7 @@ import { useTranslation } from 'next-i18next';
 
 import Button from 'components/common/Button/Button';
 import Typography from 'components/common/Typography';
+import GoogleMap from 'components/GoogleMap';
 import Styled from 'components/Home/HallInformationPanel/Styled';
 import MapStyled from 'components/NaverMap/Styled';
 import Line from 'components/Panel/Line';
@@ -24,7 +25,7 @@ const HallInformation = ({ locale }) => {
       <Typography variant="pageTitle" align="center">
         {t('웨딩홀 안내')}
       </Typography>
-      <NaverMap />
+      {isKorean ? <NaverMap /> : <GoogleMap />}
 
       <div>
         <Typography variant="title20" align="center">
