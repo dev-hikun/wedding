@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 import { Lightbox } from 'yet-another-react-lightbox';
+import Zoom from 'yet-another-react-lightbox/plugins/zoom';
 
 import Button from 'components/common/Button/Button';
 import Typography from 'components/common/Typography';
@@ -25,7 +26,7 @@ const NaverMap = dynamic(import('../../NaverMap'), { ssr: false, loading: () => 
 
 const HallInformation = ({ locale }) => {
   const { t } = useTranslation();
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(-1);
   const isKorean = locale === 'ko';
   return (
     <Styled.Panel>
@@ -96,6 +97,7 @@ const HallInformation = ({ locale }) => {
         index={index}
         slides={[Airport1Image, Airport2Image]}
         open={index >= 0}
+        plugins={[Zoom]}
         close={() => setIndex(-1)}
         render={{ slide: LightboxImages }}
       />

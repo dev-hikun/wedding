@@ -6,7 +6,7 @@ import { useTranslation } from 'next-i18next';
 import Typography from 'components/common/Typography';
 import Styled from 'components/Home/IntroPanel/Styled';
 
-import introPhoto from 'assets/images/main-photo.png';
+import introPhoto from 'public/photos/wedding02.jpg';
 const IntroPanel = ({ locale }) => {
   const { t } = useTranslation();
   const isKorean = locale === 'ko';
