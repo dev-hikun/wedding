@@ -1,11 +1,15 @@
+import { useState } from 'react';
+
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
+import { Lightbox } from 'yet-another-react-lightbox';
 
 import Button from 'components/common/Button/Button';
 import Typography from 'components/common/Typography';
 import GoogleMap from 'components/GoogleMap';
 import Styled from 'components/Home/HallInformationPanel/Styled';
+import LightboxImages from 'components/LightBoxImage';
 import MapStyled from 'components/NaverMap/Styled';
 import Line from 'components/Panel/Line';
 import { spacing } from 'constants/theme';
@@ -14,11 +18,14 @@ import googleMap from 'assets/images/google-map.png';
 import kakaoMap from 'assets/images/kakao-map.png';
 import naverMap from 'assets/images/naver-map.png';
 import tMap from 'assets/images/t-map.png';
+import Airport1Image from 'assets/images/terminal-1.jpg';
+import Airport2Image from 'assets/images/terminal-2.jpg';
 
 const NaverMap = dynamic(import('../../NaverMap'), { ssr: false, loading: () => <MapStyled.MapWrapper /> });
 
 const HallInformation = ({ locale }) => {
   const { t } = useTranslation();
+  const [index, setIndex] = useState(0);
   const isKorean = locale === 'ko';
   return (
     <Styled.Panel>
@@ -73,7 +80,8 @@ const HallInformation = ({ locale }) => {
 
             <Typography variant="body1">{t('아래 버튼을 클릭하시면 더 자세히 보실 수 있습니다.')}</Typography>
             <div css={{ padding: spacing[4] }}>
-              <Button>{t('인천공항 1터미널')}</Button> <Button>{t('인천공항 2터미널')}</Button>
+              <Button onClick={() => setIndex(0)}>{t('인천공항 1터미널')}</Button>{' '}
+              <Button onClick={() => setIndex(1)}>{t('인천공항 2터미널')}</Button>
             </div>
           </div>
         ) : (
@@ -83,6 +91,14 @@ const HallInformation = ({ locale }) => {
           </div>
         )}
       </Styled.TransportationContainer>
+
+      <Lightbox
+        index={index}
+        slides={[Airport1Image, Airport2Image]}
+        open={index >= 0}
+        close={() => setIndex(-1)}
+        render={{ slide: LightboxImages }}
+      />
     </Styled.Panel>
   );
 };
