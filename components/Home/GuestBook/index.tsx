@@ -18,15 +18,38 @@ const load = async () => {
   return data;
 };
 
+const check = async (id: string) => {
+  const { checkPassword } = await import('./firebasePlugin');
+  const value = prompt('비밀번호를 입력해주세요');
+  if (!(await checkPassword(id, value))) {
+    alert('비밀번호가 올바르지 않습니다.');
+    return false;
+  }
+  return true;
+};
+
 const GuestBook = () => {
   const { t } = useTranslation();
   const [list, setList] = useState<IMessage[]>([]);
-  const [id, setId] = useState(-1);
+  const [data, setData] = useState<Partial<IMessage> | null>(null);
 
-  const handleWriteButtonClick = () => setId(0);
-  const handleWriteModalClose = () => setId(-1);
+  const handleWriteButtonClick = () => setData({});
+  const handleWriteModalClose = () => setData(null);
   const handleUpdate = async () => {
     setList(await load());
+  };
+  const handleEditClick = async (message: IMessage) => {
+    if (!(await check(message.docId))) return;
+    setData(message);
+  };
+  const handleDeleteClick = async (message: IMessage) => {
+    const result = await check(message.docId);
+    if (!result) return;
+    if (confirm('정말로 삭제하시겠습니까?')) {
+      const { deleteGuestBook } = await import('./firebasePlugin');
+      await deleteGuestBook(message.docId);
+      setList(await load());
+    }
   };
 
   useEffect(() => {
@@ -42,7 +65,12 @@ const GuestBook = () => {
       </Typography>
       <Styled.ChatRoom>
         {list.map((item) => (
-          <Message key={`${item.docId}`} item={item} />
+          <Message
+            key={`${item.docId}`}
+            item={item}
+            onClickModify={handleEditClick}
+            onClickDelete={handleDeleteClick}
+          />
         ))}
       </Styled.ChatRoom>
 
@@ -51,7 +79,7 @@ const GuestBook = () => {
           방명록 남기기
         </Button>
       </Styled.ButtonArea>
-      {id !== -1 && <WriteModal onUpdate={handleUpdate} onClose={handleWriteModalClose} />}
+      {data !== null && <WriteModal data={data} onUpdate={handleUpdate} onClose={handleWriteModalClose} />}
     </Styled.Panel>
   );
 };
@@ -65,7 +93,7 @@ const GuestBookButtonClass = css`
   right: 0;
   bottom: ${spacing[16]}px !important;
   padding: ${spacing[16]}px ${spacing[16]}px !important;
-  background-color: ${color.gray100};
+  background-color: ${color.green} !important;
   color: ${color.text};
 `;
 

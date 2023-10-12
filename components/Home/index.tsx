@@ -7,6 +7,7 @@ import HallInformation from 'components/Home/HallInformationPanel';
 import IntroPanel from 'components/Home/IntroPanel';
 import MessagePanel from 'components/Home/MessagePanel';
 import Styled from 'components/Home/Styled';
+import { color, spacing } from 'constants/theme';
 import type { NextPageWithLayout } from 'types/common';
 
 const Home: NextPageWithLayout<{ locale?: string }> = ({ locale }) => {
@@ -29,6 +30,21 @@ const Home: NextPageWithLayout<{ locale?: string }> = ({ locale }) => {
       </Head>
       <Styled.Container>
         <IntroPanel locale={locale} />
+        <a
+          href="https://calendar.google.com/calendar/u/0/r/eventedit?dates=20231209T080000Z/20231209T100000Z&location=%EB%9D%BC%EC%98%A8%EC%A0%9C%EB%82%98%EB%B6%84%EB%8B%B9,%20Seongnam-si,%20South%20Korea&text=%ED%9D%AC%ED%98%84+%26+%EB%AF%B8%EC%8A%A4%EC%A6%88+%EA%B2%B0%ED%98%BC%EC%8B%9D"
+          target="_blank"
+          title={t('캘린더에 추가하기')}
+          css={{
+            width: '100%',
+            padding: spacing[16],
+            backgroundColor: color.green,
+            color: color.text,
+            // margin: `${spacing[16]}px 0`,
+            textAlign: 'center',
+          }}
+        >
+          🗓 {t('캘린더에 추가하기')}
+        </a>
         <MessagePanel locale={locale} />
         <Gallery />
         <HallInformation locale={locale} />
