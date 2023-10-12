@@ -25,7 +25,7 @@ const NextJsAlbumImage = ({
         loading="lazy"
         src={photo}
         {...{ alt, title, onClick, className }}
-        sizes="100%"
+        sizes="30vw"
       />
     </div>
   );

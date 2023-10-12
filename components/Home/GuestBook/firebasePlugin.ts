@@ -1,11 +1,50 @@
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, getDocs, Timestamp, addDoc, query, orderBy } from 'firebase/firestore';
 
 import { fireStore } from 'plugins/firebase';
 import type { IMessage } from 'types/message';
+import { getDate } from 'utils/common';
 
 export const readAll = async () => {
-  const querySnapshot = await getDocs(collection(fireStore, 'wedding'));
-  if (querySnapshot.docs)
-    return (querySnapshot.docs.find(({ id }) => id === 'guest-book')?.data()?.data as IMessage[]) || [];
-  return [];
+  const db = collection(fireStore, 'wedding');
+  const q = query(db, orderBy('datetime', 'desc'));
+  const querySnapshot = await getDocs(q);
+  return querySnapshot.docs.reduce((acc, doc) => {
+    if (doc.exists()) {
+      return [
+        ...acc,
+        {
+          docId: doc.id,
+          ...doc.data(),
+        },
+      ];
+    }
+    return acc;
+  }, []);
+};
+
+export const postGuestBook = async (data: Partial<IMessage>) => {
+  const guestBookRef = collection(fireStore, 'wedding');
+  const date = new Date();
+  const { year, month, day } = getDate(date);
+
+  const image = await fetch('https://source.unsplash.com/random/100%C3%97100?animal')
+    .then((response) => response.blob())
+    .then((image) => {
+      return new Promise<string | ArrayBuffer>((resolve) => {
+        const fileReader = new FileReader();
+        fileReader.readAsDataURL(image);
+        fileReader.onload = function (fileLoadedEvent) {
+          resolve(fileLoadedEvent.target.result);
+        };
+      });
+    });
+
+  await addDoc(guestBookRef, {
+    ...data,
+    datetime: Timestamp.fromDate(date),
+    updatedAt: Timestamp.fromDate(date),
+    id: data.name + year + String(month) + day,
+    isDeleted: false,
+    image,
+  });
 };

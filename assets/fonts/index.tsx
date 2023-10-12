@@ -1,4 +1,4 @@
-import { Noto_Serif_KR, Noto_Serif_JP } from '@next/font/google';
+import { Noto_Serif_KR, Noto_Serif_JP } from 'next/font/google';
 
 export const FONT_CSS_VAR = {
   ko: 'var(--noto-serif-ko)',

@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 
+import { IconButton } from 'components/common/Button';
 import { color, spacing } from 'constants/theme';
 
 const Container = styled.article({
@@ -43,9 +44,16 @@ const Message = styled.div({
   },
 });
 
+const Icon = styled(IconButton)`
+  &.xs {
+    padding: ${spacing[4]}px;
+  }
+`;
+
 export const Styled = {
   Container,
   ImageWrapper,
   MessageContainer,
   Message,
+  Icon,
 };

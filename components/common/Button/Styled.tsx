@@ -8,6 +8,10 @@ const Button = styled.button({
   borderRadius: 4,
   border: `1px solid ${color.gray100}`,
 
+  '&:not(:disabled)': {
+    cursor: 'pointer',
+  },
+
   '&.xs': {
     fontSize: 12,
     padding: 0,
