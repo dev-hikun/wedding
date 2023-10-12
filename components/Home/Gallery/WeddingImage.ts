@@ -1,5 +1,4 @@
 import Wedding01 from 'public/photos/wedding01.jpg';
-import Wedding02 from 'public/photos/wedding02.jpg';
 import Wedding03 from 'public/photos/wedding03.jpg';
 import Wedding04 from 'public/photos/wedding04.jpg';
 import Wedding05 from 'public/photos/wedding05.jpg';
@@ -12,10 +11,14 @@ import Wedding11 from 'public/photos/wedding11.jpg';
 import Wedding12 from 'public/photos/wedding12.jpg';
 import Wedding13 from 'public/photos/wedding13.jpg';
 import Wedding14 from 'public/photos/wedding14.jpg';
+import Wedding15 from 'public/photos/wedding15.jpg';
+import Wedding16 from 'public/photos/wedding16.jpg';
+import Wedding17 from 'public/photos/wedding17.jpg';
+import Wedding18 from 'public/photos/wedding18.jpg';
 
 export const photos = [
   Wedding01,
-  Wedding02,
+  Wedding15,
   Wedding03,
   Wedding04,
   Wedding05,
@@ -28,4 +31,7 @@ export const photos = [
   Wedding10,
   Wedding12,
   Wedding13,
+  Wedding16,
+  Wedding18,
+  Wedding17,
 ];

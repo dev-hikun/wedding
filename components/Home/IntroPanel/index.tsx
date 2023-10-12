@@ -16,10 +16,10 @@ const IntroPanel = ({ locale }) => {
       <Styled.ImageWrapper>
         <Image
           fill
+          priority
           sizes="100%"
           src={introPhoto}
           alt="희현x스즈"
-          loading="lazy"
           placeholder="blur"
           blurDataURL={introPhoto.blurDataURL}
         />

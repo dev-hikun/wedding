@@ -10,5 +10,7 @@ const spacing = {
   32: 32,
   40: 40,
   60: 60,
+  64: 64,
+  80: 80,
 } as const;
 export default spacing;
