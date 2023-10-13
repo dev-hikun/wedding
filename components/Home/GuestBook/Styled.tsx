@@ -67,7 +67,7 @@ const Form = styled.form`
 const Input = styled.input`
   border: 0;
   outline: 0;
-  font-size: 14px;
+  font-size: 16px;
   padding: ${spacing[8]}px ${spacing[8]}px;
   background-color: ${color.gray050};
   margin-bottom: ${spacing[16]}px;

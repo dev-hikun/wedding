@@ -74,7 +74,7 @@ const WriteModal: FC<WriteModalProps> = ({ data, onClose, onUpdate }) => {
                 <Styled.Title htmlFor="password" variant="title14" align="left">
                   {t('비밀번호')}
                   <Typography variant="caption" as="span" css={{ marginLeft: `${spacing[12]}px` }}>
-                    글 수정,삭제만을 위해 사용되는 비밀번호
+                    {t('글 수정,삭제만을 위해 사용되는 비밀번호')}
                   </Typography>
                 </Styled.Title>
                 <Styled.Input required id="password" name="password" type="password" autoComplete="no" />
@@ -86,7 +86,7 @@ const WriteModal: FC<WriteModalProps> = ({ data, onClose, onUpdate }) => {
             <Styled.TextArea required id="content" name="content" rows={10} defaultValue={data.content || ''} />
             <div css={buttonArea}>
               <Styled.BottomButton type="submit" size="md" className={clsx([isLoading ? 'loading' : ''])}>
-                작성하기
+                {t('작성')}
               </Styled.BottomButton>
             </div>
           </Styled.Form>

@@ -76,7 +76,7 @@ const GuestBook = () => {
 
       <Styled.ButtonArea>
         <Button css={GuestBookButtonClass} onClick={handleWriteButtonClick}>
-          방명록 남기기
+          {t('방명록')} {t('작성')}
         </Button>
       </Styled.ButtonArea>
       {data !== null && <WriteModal data={data} onUpdate={handleUpdate} onClose={handleWriteModalClose} />}
