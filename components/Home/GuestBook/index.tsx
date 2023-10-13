@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { css } from '@emotion/react';
 import { useTranslation } from 'next-i18next';
@@ -33,16 +33,16 @@ const GuestBook = () => {
   const [list, setList] = useState<IMessage[]>([]);
   const [data, setData] = useState<Partial<IMessage> | null>(null);
 
-  const handleWriteButtonClick = () => setData({});
-  const handleWriteModalClose = () => setData(null);
-  const handleUpdate = async () => {
+  const handleWriteButtonClick = useCallback(() => setData({}), []);
+  const handleWriteModalClose = useCallback(() => setData(null), []);
+  const handleUpdate = useCallback(async () => {
     setList(await load());
-  };
-  const handleEditClick = async (message: IMessage) => {
+  }, []);
+  const handleEditClick = useCallback(async (message: IMessage) => {
     if (!(await check(message.docId))) return;
     setData(message);
-  };
-  const handleDeleteClick = async (message: IMessage) => {
+  }, []);
+  const handleDeleteClick = useCallback(async (message: IMessage) => {
     const result = await check(message.docId);
     if (!result) return;
     if (confirm('정말로 삭제하시겠습니까?')) {
@@ -50,7 +50,7 @@ const GuestBook = () => {
       await deleteGuestBook(message.docId);
       setList(await load());
     }
-  };
+  }, []);
 
   useEffect(() => {
     const init = async () => {

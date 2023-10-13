@@ -8,7 +8,7 @@ import { color, spacing } from 'constants/theme';
 
 const Panel = styled(PanelComponent)({
   display: 'flex',
-  zIndex: 1001,
+  zIndex: 999,
   flexDirection: 'column',
   backgroundColor: color.white,
   height: '100%',
