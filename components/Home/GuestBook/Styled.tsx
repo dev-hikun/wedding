@@ -10,7 +10,7 @@ const Panel = styled(PanelComponent)({
   display: 'flex',
   zIndex: 999,
   flexDirection: 'column',
-  backgroundColor: color.gray050,
+  backgroundColor: color.white,
   height: '100%',
   maxHeight: '100vh',
 });
