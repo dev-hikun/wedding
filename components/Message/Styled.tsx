@@ -31,6 +31,7 @@ const Message = styled.div({
   borderRadius: 5,
   backgroundColor: color.gray050,
   padding: spacing[16],
+  whiteSpace: 'pre-line',
 
   '::after': {
     content: "''",

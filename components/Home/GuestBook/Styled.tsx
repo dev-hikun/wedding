@@ -10,7 +10,7 @@ const Panel = styled(PanelComponent)({
   display: 'flex',
   zIndex: 999,
   flexDirection: 'column',
-  backgroundColor: color.white,
+  backgroundColor: color.gray050,
   height: '100%',
   maxHeight: '100vh',
 });
@@ -40,7 +40,7 @@ const Background = styled.div`
   width: 100%;
   height: 100vh;
   inset: 0 0 0 0;
-  z-index: 1002;
+  z-index: 1100;
   background: ${color.black040};
   transition: background-color 0.1s;
 

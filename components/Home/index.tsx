@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { useTranslation } from 'next-i18next';
 
+import Contact from 'components/Home/Contact';
 import Gallery from 'components/Home/Gallery';
 import GuestBook from 'components/Home/GuestBook';
 import HallInformation from 'components/Home/HallInformationPanel';
@@ -46,8 +47,9 @@ const Home: NextPageWithLayout<{ locale?: string }> = ({ locale }) => {
           🗓 {t('캘린더에 추가하기')}
         </a>
         <MessagePanel locale={locale} />
-        <Gallery />
         <HallInformation locale={locale} />
+        {locale === 'ko' && <Contact />}
+        <Gallery />
         <GuestBook />
       </Styled.Container>
     </>
